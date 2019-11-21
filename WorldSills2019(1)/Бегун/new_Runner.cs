@@ -268,17 +268,28 @@ namespace WorldSills2019_1_.Бегун
                             //command1.Parameters.AddWithValue("@c", cmb_Country.Text);
                             //await command1.ExecuteNonQueryAsync(); 
                             #endregion
-                            SqlCommand command = new SqlCommand("INSERT INTO RunnerTest (@e,@p,@n,@s,@g,@pc,@img,@d,@c)",connection);
+                            await connection.OpenAsync();
+                            SqlCommand command = new SqlCommand("INSERT INTO [User] (@e,@p,@n,@s,@r)", connection);
                             command.Parameters.AddWithValue("@e", txt_username.Text);
                             command.Parameters.AddWithValue("@p", txt_password.Text);
                             command.Parameters.AddWithValue("@n", txt_name.Text);
                             command.Parameters.AddWithValue("@s", txt_surname.Text);
-                            command.Parameters.AddWithValue("@g", cmb_gender.Text);
-                            command.Parameters.AddWithValue("@pc", lbl_pcname.Text);
-                            command.Parameters.AddWithValue("@img", a);
-                            command.Parameters.AddWithValue("@d", dateTimePicker1.Value);
-                            command.Parameters.AddWithValue("@e", cmb_Country.Text);
-                            //await command
+                            command.Parameters.AddWithValue("@r", "R");
+                            await command.ExecuteNonQueryAsync();
+
+                            SqlCommand command1 = new SqlCommand("INSERT INTO Gender VALUES (@g)", connection);
+                            command1.Parameters.AddWithValue("@g", cmb_gender.Text);
+                            await command1.ExecuteNonQueryAsync();
+
+                            SqlCommand command2 = new SqlCommand("INSERT INTO Runner VALUES (@e,@g,@n,@img,@date,@code)", connection);
+                            command2.Parameters.AddWithValue("@e", txt_username.Text);
+                            command2.Parameters.AddWithValue("@g", cmb_gender.Text);
+                            command2.Parameters.AddWithValue("@n", lbl_pcname.Text);
+                            command2.Parameters.AddWithValue("@img", a);
+                            command2.Parameters.AddWithValue("@date", dateTimePicker1.Value);
+                            command2.Parameters.AddWithValue("@code", cmb_Country.Text);
+                            await command2.ExecuteNonQueryAsync();
+                            MessageBox.Show("!");
                         }
                     }
                 }
