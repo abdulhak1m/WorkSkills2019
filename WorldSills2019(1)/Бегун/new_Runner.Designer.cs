@@ -46,6 +46,8 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.txt_surname = new System.Windows.Forms.TextBox();
             this.cmb_gender = new System.Windows.Forms.ComboBox();
+            this.genderBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.my_maraphoneDataSet = new WorldSills2019_1_.my_maraphoneDataSet();
             this.pc_image = new System.Windows.Forms.PictureBox();
             this.btn_browse = new System.Windows.Forms.Button();
             this.lbl_pcname = new System.Windows.Forms.Label();
@@ -53,17 +55,18 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.cmb_Country = new System.Windows.Forms.ComboBox();
+            this.countryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btn_done = new System.Windows.Forms.Button();
             this.btn_back = new System.Windows.Forms.Button();
             this.btn_show = new System.Windows.Forms.Button();
             this.btn_cshow = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.dbMaraphoneDataSet = new WorldSills2019_1_.dbMaraphoneDataSet();
-            this.countryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.countryTableAdapter = new WorldSills2019_1_.dbMaraphoneDataSetTableAdapters.CountryTableAdapter();
+            this.countryTableAdapter = new WorldSills2019_1_.my_maraphoneDataSetTableAdapters.CountryTableAdapter();
+            this.genderTableAdapter = new WorldSills2019_1_.my_maraphoneDataSetTableAdapters.GenderTableAdapter();
             this.topPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.genderBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.my_maraphoneDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pc_image)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dbMaraphoneDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.countryBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -231,19 +234,27 @@
             // 
             // cmb_gender
             // 
+            this.cmb_gender.DataSource = this.genderBindingSource;
+            this.cmb_gender.DisplayMember = "Gender";
             this.cmb_gender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_gender.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmb_gender.ForeColor = System.Drawing.Color.RoyalBlue;
             this.cmb_gender.FormattingEnabled = true;
-            this.cmb_gender.Items.AddRange(new object[] {
-            "Выберите пол",
-            "Мужской",
-            "Женский",
-            "Нариман"});
             this.cmb_gender.Location = new System.Drawing.Point(44, 305);
             this.cmb_gender.Name = "cmb_gender";
             this.cmb_gender.Size = new System.Drawing.Size(293, 25);
             this.cmb_gender.TabIndex = 13;
+            this.cmb_gender.ValueMember = "Gender";
+            // 
+            // genderBindingSource
+            // 
+            this.genderBindingSource.DataMember = "Gender";
+            this.genderBindingSource.DataSource = this.my_maraphoneDataSet;
+            // 
+            // my_maraphoneDataSet
+            // 
+            this.my_maraphoneDataSet.DataSetName = "my_maraphoneDataSet";
+            this.my_maraphoneDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // pc_image
             // 
@@ -318,7 +329,12 @@
             this.cmb_Country.Name = "cmb_Country";
             this.cmb_Country.Size = new System.Drawing.Size(238, 25);
             this.cmb_Country.TabIndex = 13;
-            this.cmb_Country.ValueMember = "CountryName";
+            this.cmb_Country.ValueMember = "CountryCode";
+            // 
+            // countryBindingSource
+            // 
+            this.countryBindingSource.DataMember = "Country";
+            this.countryBindingSource.DataSource = this.my_maraphoneDataSet;
             // 
             // btn_done
             // 
@@ -382,19 +398,13 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
             // 
-            // dbMaraphoneDataSet
-            // 
-            this.dbMaraphoneDataSet.DataSetName = "dbMaraphoneDataSet";
-            this.dbMaraphoneDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // countryBindingSource
-            // 
-            this.countryBindingSource.DataMember = "Country";
-            this.countryBindingSource.DataSource = this.dbMaraphoneDataSet;
-            // 
             // countryTableAdapter
             // 
             this.countryTableAdapter.ClearBeforeFill = true;
+            // 
+            // genderTableAdapter
+            // 
+            this.genderTableAdapter.ClearBeforeFill = true;
             // 
             // new_Runner
             // 
@@ -434,8 +444,9 @@
             this.Text = "  ";
             this.Load += new System.EventHandler(this.new_Runner_Load);
             this.topPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.genderBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.my_maraphoneDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pc_image)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dbMaraphoneDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.countryBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -472,8 +483,10 @@
         private System.Windows.Forms.Button btn_cshow;
         private System.Windows.Forms.Button btn_show;
         private System.Windows.Forms.Timer timer1;
-        private dbMaraphoneDataSet dbMaraphoneDataSet;
+        private my_maraphoneDataSet my_maraphoneDataSet;
         private System.Windows.Forms.BindingSource countryBindingSource;
-        private dbMaraphoneDataSetTableAdapters.CountryTableAdapter countryTableAdapter;
+        private my_maraphoneDataSetTableAdapters.CountryTableAdapter countryTableAdapter;
+        private System.Windows.Forms.BindingSource genderBindingSource;
+        private my_maraphoneDataSetTableAdapters.GenderTableAdapter genderTableAdapter;
     }
 }

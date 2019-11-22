@@ -12,3 +12,5 @@ D:\Мои программы\WorldSills2019(1)\WorldSills2019(1)\obj\Release\Wor
 D:\Мои программы\WorldSills2019(1)\WorldSills2019(1)\obj\Release\WorldSills2019(1).pdb
 D:\Мои программы\WorldSills2019(1)\WorldSills2019(1)\obj\Release\WorldSills2019_1_.Общее.Login.resources
 D:\Мои программы\WorldSills2019(1)\WorldSills2019(1)\obj\Release\WorldSills2019_1_.Бегун.new_Runner.resources
+D:\Мои программы\WorldSills2019(1)\WorldSills2019(1)\obj\Release\WorldSills2019_1_.Бегун.MaraphoneRegistration.resources
+D:\Мои программы\WorldSills2019(1)\WorldSills2019(1)\obj\Release\WorldSills2019_1_.Бегун.Runner_Menu.resources

@@ -51,19 +51,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="dbMaraphoneDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dbMaraphoneDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
+    <Compile Include="my_maraphoneDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>my_maraphoneDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Бегун\MaraphoneRegistration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Бегун\MaraphoneRegistration.Designer.cs">
+      <DependentUpon>MaraphoneRegistration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Бегун\new_Runner.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +81,12 @@
     </Compile>
     <Compile Include="Бегун\Runner.Designer.cs">
       <DependentUpon>Runner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Бегун\Runner_Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Бегун\Runner_Menu.Designer.cs">
+      <DependentUpon>Runner_Menu.cs</DependentUpon>
     </Compile>
     <Compile Include="Общее\ConnectionStrings\Connection.cs" />
     <Compile Include="Общее\Login.cs">
@@ -96,25 +108,31 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Бегун\MaraphoneRegistration.resx">
+      <DependentUpon>MaraphoneRegistration.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Бегун\new_Runner.resx">
       <DependentUpon>new_Runner.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Бегун\Runner.resx">
       <DependentUpon>Runner.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Бегун\Runner_Menu.resx">
+      <DependentUpon>Runner_Menu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Общее\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="dbMaraphoneDataSet.xsc">
-      <DependentUpon>dbMaraphoneDataSet.xsd</DependentUpon>
+    <None Include="my_maraphoneDataSet.xsc">
+      <DependentUpon>my_maraphoneDataSet.xsd</DependentUpon>
     </None>
-    <None Include="dbMaraphoneDataSet.xsd">
+    <None Include="my_maraphoneDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dbMaraphoneDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>my_maraphoneDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="dbMaraphoneDataSet.xss">
-      <DependentUpon>dbMaraphoneDataSet.xsd</DependentUpon>
+    <None Include="my_maraphoneDataSet.xss">
+      <DependentUpon>my_maraphoneDataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

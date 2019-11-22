@@ -32,5 +32,16 @@ namespace WorldSills2019_1_.Properties {
                 return ((string)(this["dbMaraphoneConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-C1DHPVQ;Initial Catalog=my_maraphone;Integrated Security=True" +
+            "")]
+        public string my_maraphoneConnectionString {
+            get {
+                return ((string)(this["my_maraphoneConnectionString"]));
+            }
+        }
     }
 }

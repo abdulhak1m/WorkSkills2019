@@ -46,7 +46,7 @@ namespace WorldSills2019_1_.Бегун
             txt_surname.Text = "Введите фамилию";
             txt_surname.ForeColor = Color.CornflowerBlue;
 
-            cmb_gender.SelectedIndex = 0;
+            //cmb_gender.SelectedIndex = 0;
             //cmb_Country.SelectedIndex = 0;
 
             #endregion
@@ -76,8 +76,11 @@ namespace WorldSills2019_1_.Бегун
         // запускаем таймер
         private void new_Runner_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "dbMaraphoneDataSet.Country". При необходимости она может быть перемещена или удалена.
-            this.countryTableAdapter.Fill(this.dbMaraphoneDataSet.Country);
+            timer1.Start();
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "my_maraphoneDataSet.Gender". При необходимости она может быть перемещена или удалена.
+            this.genderTableAdapter.Fill(this.my_maraphoneDataSet.Gender);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "my_maraphoneDataSet.Country". При необходимости она может быть перемещена или удалена.
+            this.countryTableAdapter.Fill(this.my_maraphoneDataSet.Country);
 
         }
         // подсказки
@@ -251,35 +254,14 @@ namespace WorldSills2019_1_.Бегун
                     {
                         using(SqlConnection connection = new SqlConnection(Connection.GetString()))
                         {
-                            #region Maraphone
-                            //await connection.OpenAsync();
-                            //SqlCommand command = new SqlCommand("INSERT INTO [User] values (@e,@p,@f,@l,@r)", connection);
-                            //command.Parameters.AddWithValue("@e", txt_username.Text);
-                            //command.Parameters.AddWithValue("@p", txt_password.Text);
-                            //command.Parameters.AddWithValue("@f", txt_name.Text);
-                            //command.Parameters.AddWithValue("@l", txt_surname.Text);
-                            //command.Parameters.AddWithValue("@r", "R");
-                            //await command.ExecuteNonQueryAsync();
-
-                            //SqlCommand command1 = new SqlCommand("INSERT INTO Runner (Email, Gender, DateOfBirth, CountryCode) VALUES (@e,@g,@d,@c)", connection);
-                            //command1.Parameters.AddWithValue("@e", txt_username.Text);
-                            //command1.Parameters.AddWithValue("@g", cmb_gender.Text);
-                            //command1.Parameters.AddWithValue("@d", dateTimePicker1.Value);
-                            //command1.Parameters.AddWithValue("@c", cmb_Country.Text);
-                            //await command1.ExecuteNonQueryAsync(); 
-                            #endregion
                             await connection.OpenAsync();
-                            SqlCommand command = new SqlCommand("INSERT INTO [User] (@e,@p,@n,@s,@r)", connection);
+                            SqlCommand command = new SqlCommand("INSERT INTO [User] VALUES (@e,@p,@n,@s,@r)", connection);
                             command.Parameters.AddWithValue("@e", txt_username.Text);
                             command.Parameters.AddWithValue("@p", txt_password.Text);
                             command.Parameters.AddWithValue("@n", txt_name.Text);
                             command.Parameters.AddWithValue("@s", txt_surname.Text);
-                            command.Parameters.AddWithValue("@r", "R");
+                            command.Parameters.AddWithValue("@r", 'R');
                             await command.ExecuteNonQueryAsync();
-
-                            SqlCommand command1 = new SqlCommand("INSERT INTO Gender VALUES (@g)", connection);
-                            command1.Parameters.AddWithValue("@g", cmb_gender.Text);
-                            await command1.ExecuteNonQueryAsync();
 
                             SqlCommand command2 = new SqlCommand("INSERT INTO Runner VALUES (@e,@g,@n,@img,@date,@code)", connection);
                             command2.Parameters.AddWithValue("@e", txt_username.Text);
@@ -287,18 +269,17 @@ namespace WorldSills2019_1_.Бегун
                             command2.Parameters.AddWithValue("@n", lbl_pcname.Text);
                             command2.Parameters.AddWithValue("@img", a);
                             command2.Parameters.AddWithValue("@date", dateTimePicker1.Value);
-                            command2.Parameters.AddWithValue("@code", cmb_Country.Text);
+                            command2.Parameters.AddWithValue("@code", cmb_Country.SelectedValue);
                             await command2.ExecuteNonQueryAsync();
-                            MessageBox.Show("!");
+                            MessageBox.Show("Данные о вас успешно сохранены в системе!", "Поздравляю клоун, данные сохранены!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MaraphoneRegWindow();
                         }
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                DialogResult dialog = MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error);
-                if (dialog == DialogResult.Retry)
-                    return;
+                MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         OpenFileDialog file = new OpenFileDialog();
@@ -315,6 +296,7 @@ namespace WorldSills2019_1_.Бегун
                     pc_image.Image = Image.FromFile(file.FileName);
                     pc_image.SizeMode = PictureBoxSizeMode.StretchImage;
                     pc_image.BorderStyle = BorderStyle.None;
+                    lbl_pcname.Text = file.SafeFileName.ToString();
                 }
             }
             catch(Exception ex)
@@ -327,9 +309,16 @@ namespace WorldSills2019_1_.Бегун
         {
             DateTime maraphoneSkills = new DateTime(2019, 12, 12, 6, 0, 0);
             TimeSpan totalTime = maraphoneSkills - DateTime.Now;
-            lbl_timer.Text = totalTime.Days + " дней " + totalTime.Hours + "часов и " + totalTime.Minutes + " минут до старта Марафона!";
+            lbl_timer.Text = totalTime.Days + " дней " + totalTime.Hours + " часов и " + totalTime.Minutes + " минут до старта Марафона!";
         }
-
+        // в случаи успешной регистрации, срабатывет этот метод, который перекинет пользователя в форму регистрации на марафон
+        private void MaraphoneRegWindow()
+        {
+            ActiveForm.Hide();
+            MaraphoneRegistration registration = new MaraphoneRegistration();
+            registration.ShowDialog();
+            Close();
+        }
         private void btn_browse_Click(object sender, EventArgs e)
         {
             Open();

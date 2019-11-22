@@ -1,0 +1,14 @@
+D:\Мои программы\WorldSills2019(1)\WorldSills2019(1)\bin\Debug\WorldSills2019(1).exe.config
+D:\Мои программы\WorldSills2019(1)\WorldSills2019(1)\bin\Debug\WorldSills2019(1).exe
+D:\Мои программы\WorldSills2019(1)\WorldSills2019(1)\bin\Debug\WorldSills2019(1).pdb
+D:\Мои программы\WorldSills2019(1)\WorldSills2019(1)\bin\Debug\Bunifu_UI_v1.52.dll
+D:\Мои программы\WorldSills2019(1)\WorldSills2019(1)\obj\Debug\WorldSills2019(1).csprojAssemblyReference.cache
+D:\Мои программы\WorldSills2019(1)\WorldSills2019(1)\obj\Debug\WorldSills2019_1_.Home.resources
+D:\Мои программы\WorldSills2019(1)\WorldSills2019(1)\obj\Debug\WorldSills2019_1_.Properties.Resources.resources
+D:\Мои программы\WorldSills2019(1)\WorldSills2019(1)\obj\Debug\WorldSills2019_1_.Бегун.new_Runner.resources
+D:\Мои программы\WorldSills2019(1)\WorldSills2019(1)\obj\Debug\WorldSills2019_1_.Бегун.Runner.resources
+D:\Мои программы\WorldSills2019(1)\WorldSills2019(1)\obj\Debug\WorldSills2019_1_.Общее.Login.resources
+D:\Мои программы\WorldSills2019(1)\WorldSills2019(1)\obj\Debug\WorldSills2019(1).csproj.GenerateResource.cache
+D:\Мои программы\WorldSills2019(1)\WorldSills2019(1)\obj\Debug\WorldSills2019(1).csproj.CopyComplete
+D:\Мои программы\WorldSills2019(1)\WorldSills2019(1)\obj\Debug\WorldSills2019(1).exe
+D:\Мои программы\WorldSills2019(1)\WorldSills2019(1)\obj\Debug\WorldSills2019(1).pdb
