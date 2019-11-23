@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WorldSills2019_1_.Общее.ConnectionStrings;
 
 namespace WorldSills2019_1_.Общее
 {
@@ -32,6 +34,7 @@ namespace WorldSills2019_1_.Общее
             txt_password.ForeColor = Color.CornflowerBlue;
             #endregion
         }
+        public static string email;
         // приватный ввод пароля
         private void PasswordBox()
         {
@@ -128,6 +131,46 @@ namespace WorldSills2019_1_.Общее
             if(e.KeyValue == (char)Keys.Enter)
             {
                 btn_Login.PerformClick();
+            }
+        }
+        // авторизация
+        private async void btn_Login_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(Connection.GetString()))
+                {
+                    await connection.OpenAsync();
+                    SqlCommand command = new SqlCommand("SELECT * FROM [User] WHERE Email = '" + txt_username.Text.Trim() + "' and [Password] = '" + txt_password.Text.Trim() + "'", connection);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (!reader.HasRows)
+                        {
+                            MessageBox.Show("Пользователь с таким логином и паролем не найден в системе! " +
+                                "Удостоверьтесь в корректности введённых данных.", "Такого клона нет в Базе Данных", MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+                        }
+                        else
+                        {
+                            while (reader.Read())
+                            {
+                                email = reader["Email"].ToString();
+                                if(reader["RoleId"].ToString() == "R")
+                                {
+                                    MessageBox.Show("Бегун");
+                                }
+                                if(reader["RoleId"].ToString() == "A")
+                                {
+                                    MessageBox.Show("Admin");
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

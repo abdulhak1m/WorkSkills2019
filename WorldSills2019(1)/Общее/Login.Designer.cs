@@ -32,6 +32,8 @@
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.topPanel = new System.Windows.Forms.Panel();
+            this.btn_minimized = new System.Windows.Forms.Button();
+            this.btn_Close = new System.Windows.Forms.Button();
             this.lbl_timer = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.txt_username = new System.Windows.Forms.TextBox();
@@ -42,8 +44,6 @@
             this.btn_show = new System.Windows.Forms.Button();
             this.btn_Login = new System.Windows.Forms.Button();
             this.btn_back = new System.Windows.Forms.Button();
-            this.btn_minimized = new System.Windows.Forms.Button();
-            this.btn_Close = new System.Windows.Forms.Button();
             this.topPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,6 +75,34 @@
             this.topPanel.Name = "topPanel";
             this.topPanel.Size = new System.Drawing.Size(470, 25);
             this.topPanel.TabIndex = 4;
+            // 
+            // btn_minimized
+            // 
+            this.btn_minimized.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_minimized.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btn_minimized.FlatAppearance.BorderSize = 0;
+            this.btn_minimized.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_minimized.ForeColor = System.Drawing.Color.White;
+            this.btn_minimized.Image = global::WorldSills2019_1_.Properties.Resources.icons8_m5acos_minimize_16;
+            this.btn_minimized.Location = new System.Drawing.Point(420, 0);
+            this.btn_minimized.Name = "btn_minimized";
+            this.btn_minimized.Size = new System.Drawing.Size(25, 25);
+            this.btn_minimized.TabIndex = 2;
+            this.btn_minimized.UseVisualStyleBackColor = false;
+            // 
+            // btn_Close
+            // 
+            this.btn_Close.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Close.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btn_Close.FlatAppearance.BorderSize = 0;
+            this.btn_Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Close.ForeColor = System.Drawing.Color.White;
+            this.btn_Close.Image = global::WorldSills2019_1_.Properties.Resources.icons8_shutdown_16;
+            this.btn_Close.Location = new System.Drawing.Point(445, 0);
+            this.btn_Close.Name = "btn_Close";
+            this.btn_Close.Size = new System.Drawing.Size(25, 25);
+            this.btn_Close.TabIndex = 1;
+            this.btn_Close.UseVisualStyleBackColor = false;
             // 
             // lbl_timer
             // 
@@ -166,6 +194,7 @@
             this.btn_Login.Size = new System.Drawing.Size(68, 38);
             this.btn_Login.TabIndex = 10;
             this.btn_Login.UseVisualStyleBackColor = false;
+            this.btn_Login.Click += new System.EventHandler(this.btn_Login_Click);
             this.btn_Login.MouseEnter += new System.EventHandler(this.btn_Login_MouseEnter);
             // 
             // btn_back
@@ -182,34 +211,6 @@
             this.btn_back.UseVisualStyleBackColor = false;
             this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
             this.btn_back.MouseEnter += new System.EventHandler(this.btn_back_MouseEnter);
-            // 
-            // btn_minimized
-            // 
-            this.btn_minimized.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_minimized.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btn_minimized.FlatAppearance.BorderSize = 0;
-            this.btn_minimized.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_minimized.ForeColor = System.Drawing.Color.White;
-            this.btn_minimized.Image = global::WorldSills2019_1_.Properties.Resources.icons8_m5acos_minimize_16;
-            this.btn_minimized.Location = new System.Drawing.Point(420, 0);
-            this.btn_minimized.Name = "btn_minimized";
-            this.btn_minimized.Size = new System.Drawing.Size(25, 25);
-            this.btn_minimized.TabIndex = 2;
-            this.btn_minimized.UseVisualStyleBackColor = false;
-            // 
-            // btn_Close
-            // 
-            this.btn_Close.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Close.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btn_Close.FlatAppearance.BorderSize = 0;
-            this.btn_Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Close.ForeColor = System.Drawing.Color.White;
-            this.btn_Close.Image = global::WorldSills2019_1_.Properties.Resources.icons8_shutdown_16;
-            this.btn_Close.Location = new System.Drawing.Point(445, 0);
-            this.btn_Close.Name = "btn_Close";
-            this.btn_Close.Size = new System.Drawing.Size(25, 25);
-            this.btn_Close.TabIndex = 1;
-            this.btn_Close.UseVisualStyleBackColor = false;
             // 
             // Login
             // 

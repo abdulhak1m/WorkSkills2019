@@ -59,12 +59,22 @@ namespace WorldSills2019_1_
             toolTip.SetToolTip(btn_Login, "Авторизоваться");
         }
         // переходим в окно выбора типа бегуна
-        private void btn_runner_Click(object sender, EventArgs e)
+        private void btn_runner_Click_1(object sender, EventArgs e)
         {
             ActiveForm.Hide();
             Runner runner = new Runner();
             runner.ShowDialog();
             Close();
+        }
+
+        private void btn_sponsor_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_info_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

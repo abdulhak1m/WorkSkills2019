@@ -109,5 +109,15 @@ namespace WorldSills2019_1_.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons81_us_dollar {
+            get {
+                object obj = ResourceManager.GetObject("icons81_us_dollar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

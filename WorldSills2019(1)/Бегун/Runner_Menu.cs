@@ -42,5 +42,13 @@ namespace WorldSills2019_1_.Бегун
         {
             timer1.Start();
         }
+        // переход в окно регистрации на Марафон
+        private void btn_registration_runner_Click(object sender, EventArgs e)
+        {
+            ActiveForm.Hide();
+            MaraphoneRegistration registration = new MaraphoneRegistration();
+            registration.ShowDialog();
+            Close();
+        }
     }
 }

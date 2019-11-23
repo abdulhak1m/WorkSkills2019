@@ -288,7 +288,7 @@ namespace WorldSills2019_1_.Бегун
         {
             try
             {
-                file.InitialDirectory = @"C:\Users\admin\Pictures\Saved Pictures";
+                file.InitialDirectory = @"B:\Pinterest";
                 file.Filter = "Image File (*.BMP;*.PNG;*.JPG;*.JPEG)| *.BMP;*.PNG;*.JPG;*.JPEG | All File (*.*)|*.*";
                 file.FilterIndex = 2;
                 if(file.ShowDialog() == DialogResult.OK)
