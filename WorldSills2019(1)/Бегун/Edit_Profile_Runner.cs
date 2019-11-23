@@ -4,10 +4,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WorldSills2019_1_.Общее;
 using WorldSills2019_1_.Общее.ConnectionStrings;
 
 namespace WorldSills2019_1_.Бегун
@@ -74,7 +76,27 @@ namespace WorldSills2019_1_.Бегун
                     await connection.OpenAsync();
                     // User.[Email], User.[Password]
                     SqlCommand command = new SqlCommand("SELECT User.[FirstName], User.[LastName], Country.[CountryName], Runner.[Gender], Runner.[DateOfBirth], Runner.[NamePic], Runner.[Picture] FROM User, Country, Runner WHERE" +
-                        "User");
+                        "User.Email = Runner.Email AND Runner.[CountryCode] = Country.[CountryCode] AND User.Email = '" + Login.email + "'", connection);
+                    using(SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            txt_username.Text = Login.email;
+                            txt_name.Text = reader["FirstName"].ToString();
+                            txt_surname.Text = reader["LastName"].ToString();
+                            cmb_gender.Text = reader["Gender"].ToString();
+                            cmb_Country.Text = reader["CountryName"].ToString();
+                            dateTimePicker1.Value = Convert.ToDateTime(reader["DateOfBirth"]);
+                            lbl_pcname.Text = reader["NamePic"].ToString();
+                            byte[] BinaryToImg = new byte[0];
+                            BinaryToImg = (byte[])reader["Picture"];
+                            MemoryStream ms = new MemoryStream(BinaryToImg);
+                            this.pc_image.Image = Image.FromStream(ms);
+                            pc_image.SizeMode = PictureBoxSizeMode.StretchImage;
+                            pc_image.BorderStyle = BorderStyle.None;
+                            ms.Close();
+                        }
+                    }
                 }
             }
             catch(Exception ex)

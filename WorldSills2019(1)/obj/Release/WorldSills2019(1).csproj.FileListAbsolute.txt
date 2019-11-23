@@ -29,3 +29,22 @@ G:\WinFormApp (Сентябрь)\Подготовка_к_WSR\WorldSkills(2)\Work
 G:\WinFormApp (Сентябрь)\Подготовка_к_WSR\WorldSkills(2)\WorkSkills2019\WorldSills2019(1)\obj\Release\WorldSills2019(1).csproj.CopyComplete
 G:\WinFormApp (Сентябрь)\Подготовка_к_WSR\WorldSkills(2)\WorkSkills2019\WorldSills2019(1)\obj\Release\WorldSills2019(1).exe
 G:\WinFormApp (Сентябрь)\Подготовка_к_WSR\WorldSkills(2)\WorkSkills2019\WorldSills2019(1)\obj\Release\WorldSills2019(1).pdb
+H:\Мои проекты\WorldSkills 2019-2020\WorkSkills2019\WorldSills2019(1)\bin\Release\WorldSills2019(1).exe.config
+H:\Мои проекты\WorldSkills 2019-2020\WorkSkills2019\WorldSills2019(1)\bin\Release\WorldSills2019(1).exe
+H:\Мои проекты\WorldSkills 2019-2020\WorkSkills2019\WorldSills2019(1)\bin\Release\WorldSills2019(1).pdb
+H:\Мои проекты\WorldSkills 2019-2020\WorkSkills2019\WorldSills2019(1)\bin\Release\Bunifu_UI_v1.52.dll
+H:\Мои проекты\WorldSkills 2019-2020\WorkSkills2019\WorldSills2019(1)\obj\Release\WorldSills2019(1).csprojAssemblyReference.cache
+H:\Мои проекты\WorldSkills 2019-2020\WorkSkills2019\WorldSills2019(1)\obj\Release\WorldSills2019_1_.Бегун.Edit_Profile_Runner.resources
+H:\Мои проекты\WorldSkills 2019-2020\WorkSkills2019\WorldSills2019(1)\obj\Release\WorldSills2019_1_.Home.resources
+H:\Мои проекты\WorldSkills 2019-2020\WorkSkills2019\WorldSills2019(1)\obj\Release\WorldSills2019_1_.Properties.Resources.resources
+H:\Мои проекты\WorldSkills 2019-2020\WorkSkills2019\WorldSills2019(1)\obj\Release\WorldSills2019_1_.Бегун.MaraphoneRegistration.resources
+H:\Мои проекты\WorldSkills 2019-2020\WorkSkills2019\WorldSills2019(1)\obj\Release\WorldSills2019_1_.Бегун.new_Runner.resources
+H:\Мои проекты\WorldSkills 2019-2020\WorkSkills2019\WorldSills2019(1)\obj\Release\WorldSills2019_1_.Бегун.Runner.resources
+H:\Мои проекты\WorldSkills 2019-2020\WorkSkills2019\WorldSills2019(1)\obj\Release\WorldSills2019_1_.Бегун.Runner_Menu.resources
+H:\Мои проекты\WorldSkills 2019-2020\WorkSkills2019\WorldSills2019(1)\obj\Release\WorldSills2019_1_.Общее.Login.resources
+H:\Мои проекты\WorldSkills 2019-2020\WorkSkills2019\WorldSills2019(1)\obj\Release\WorldSills2019(1).csproj.GenerateResource.cache
+H:\Мои проекты\WorldSkills 2019-2020\WorkSkills2019\WorldSills2019(1)\obj\Release\WorldSills2019(1).csproj.CopyComplete
+H:\Мои проекты\WorldSkills 2019-2020\WorkSkills2019\WorldSills2019(1)\obj\Release\WorldSills2019(1).exe
+H:\Мои проекты\WorldSkills 2019-2020\WorkSkills2019\WorldSills2019(1)\obj\Release\WorldSills2019(1).pdb
+H:\Мои проекты\WorldSkills 2019-2020\WorkSkills2019\WorldSills2019(1)\obj\Release\WorldSills2019_1_.Бегун.Done_Form.resources
+H:\Мои проекты\WorldSkills 2019-2020\WorkSkills2019\WorldSills2019(1)\obj\Release\WorldSills2019_1_.Администрация.Admin_menu.resources

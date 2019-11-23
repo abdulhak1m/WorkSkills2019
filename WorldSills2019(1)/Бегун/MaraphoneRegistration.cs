@@ -57,20 +57,31 @@ namespace WorldSills2019_1_.Бегун
         }
         private async void btn_Registration_Click(object sender, EventArgs e)
         {
-            if (!checkBox1.Checked && !checkBox2.Checked && !checkBox3.Checked)
-                MessageBox.Show("Пожалуйста, выберите один из представленных марафонов",
-                    "Выбери что-нибудь клоун!");
-            else
+            try
             {
-                using (SqlConnection connection = new SqlConnection(Connection.GetString()))
+                if (!checkBox1.Checked && !checkBox2.Checked && !checkBox3.Checked)
+                    MessageBox.Show("Пожалуйста, выберите один из представленных марафонов",
+                        "Выбери что-нибудь клоун!");
+                else
                 {
-                    await connection.OpenAsync();
-                    SqlCommand command = new SqlCommand("INSERT INTO Offers VALUES (@N, @A)", connection);
-                    command.Parameters.AddWithValue("@N", comboBox1.Text);
-                    command.Parameters.AddWithValue("@A", int.Parse(lbl_Num.Text));
-                    await command.ExecuteNonQueryAsync();
-                    MessageBox.Show("Test");
+                    using (SqlConnection connection = new SqlConnection(Connection.GetString()))
+                    {
+                        await connection.OpenAsync();
+                        SqlCommand command = new SqlCommand("INSERT INTO Offers VALUES (@N, @A)", connection);
+                        command.Parameters.AddWithValue("@N", comboBox1.Text);
+                        command.Parameters.AddWithValue("@A", int.Parse(lbl_Num.Text));
+                        await command.ExecuteNonQueryAsync();
+                        // переходим в окно подтверждения регистрации на Марафон
+                        ActiveForm.Hide();
+                        Done_Form done = new Done_Form();
+                        done.ShowDialog();
+                        Close();
+                    }
                 }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

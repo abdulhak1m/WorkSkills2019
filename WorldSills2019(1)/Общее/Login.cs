@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WorldSills2019_1_.Администрация;
+using WorldSills2019_1_.Бегун;
 using WorldSills2019_1_.Общее.ConnectionStrings;
 
 namespace WorldSills2019_1_.Общее
@@ -88,6 +90,8 @@ namespace WorldSills2019_1_.Общее
             timer1.Start();
         }
         // пользовательские подсказки
+        // клиентская область программы
+        #region ClientAreal
         private void txt_username_Enter(object sender, EventArgs e)
         {
             if (txt_username.Text == "Введите логин")
@@ -133,6 +137,7 @@ namespace WorldSills2019_1_.Общее
                 btn_Login.PerformClick();
             }
         }
+        #endregion
         // авторизация
         private async void btn_Login_Click(object sender, EventArgs e)
         {
@@ -157,11 +162,17 @@ namespace WorldSills2019_1_.Общее
                                 email = reader["Email"].ToString();
                                 if(reader["RoleId"].ToString() == "R")
                                 {
-                                    MessageBox.Show("Бегун");
+                                    ActiveForm.Hide();
+                                    Edit_Profile_Runner runner = new Edit_Profile_Runner();
+                                    runner.ShowDialog();
+                                    Close();
                                 }
                                 if(reader["RoleId"].ToString() == "A")
                                 {
-                                    MessageBox.Show("Admin");
+                                    ActiveForm.Hide();
+                                    Admin_menu admin = new Admin_menu();
+                                    admin.ShowDialog();
+                                    Close();
                                 }
                             }
                         }

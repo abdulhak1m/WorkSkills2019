@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.topPanel = new System.Windows.Forms.Panel();
+            this.btn_minimized = new System.Windows.Forms.Button();
+            this.btn_Close = new System.Windows.Forms.Button();
             this.lbl_timer = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
@@ -55,13 +57,11 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.ewqeqw = new System.Windows.Forms.Panel();
             this.btn_Registration = new System.Windows.Forms.Button();
             this.btn_back = new System.Windows.Forms.Button();
-            this.btn_minimized = new System.Windows.Forms.Button();
-            this.btn_Close = new System.Windows.Forms.Button();
             this.dollar = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.qwe = new System.Windows.Forms.Panel();
             this.topPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
@@ -77,6 +77,34 @@
             this.topPanel.Name = "topPanel";
             this.topPanel.Size = new System.Drawing.Size(707, 25);
             this.topPanel.TabIndex = 6;
+            // 
+            // btn_minimized
+            // 
+            this.btn_minimized.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_minimized.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btn_minimized.FlatAppearance.BorderSize = 0;
+            this.btn_minimized.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_minimized.ForeColor = System.Drawing.Color.White;
+            this.btn_minimized.Image = global::WorldSills2019_1_.Properties.Resources.icons8_m5acos_minimize_16;
+            this.btn_minimized.Location = new System.Drawing.Point(657, 0);
+            this.btn_minimized.Name = "btn_minimized";
+            this.btn_minimized.Size = new System.Drawing.Size(25, 25);
+            this.btn_minimized.TabIndex = 2;
+            this.btn_minimized.UseVisualStyleBackColor = false;
+            // 
+            // btn_Close
+            // 
+            this.btn_Close.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Close.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btn_Close.FlatAppearance.BorderSize = 0;
+            this.btn_Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Close.ForeColor = System.Drawing.Color.White;
+            this.btn_Close.Image = global::WorldSills2019_1_.Properties.Resources.icons8_shutdown_16;
+            this.btn_Close.Location = new System.Drawing.Point(682, 0);
+            this.btn_Close.Name = "btn_Close";
+            this.btn_Close.Size = new System.Drawing.Size(25, 25);
+            this.btn_Close.TabIndex = 1;
+            this.btn_Close.UseVisualStyleBackColor = false;
             // 
             // lbl_timer
             // 
@@ -387,13 +415,13 @@
             this.comboBox1.Size = new System.Drawing.Size(208, 25);
             this.comboBox1.TabIndex = 29;
             // 
-            // panel5
+            // ewqeqw
             // 
-            this.panel5.BackColor = System.Drawing.Color.RoyalBlue;
-            this.panel5.Location = new System.Drawing.Point(114, 490);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(208, 5);
-            this.panel5.TabIndex = 30;
+            this.ewqeqw.BackColor = System.Drawing.Color.RoyalBlue;
+            this.ewqeqw.Location = new System.Drawing.Point(114, 490);
+            this.ewqeqw.Name = "ewqeqw";
+            this.ewqeqw.Size = new System.Drawing.Size(208, 5);
+            this.ewqeqw.TabIndex = 30;
             // 
             // btn_Registration
             // 
@@ -424,34 +452,6 @@
             this.btn_back.UseVisualStyleBackColor = false;
             this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
             // 
-            // btn_minimized
-            // 
-            this.btn_minimized.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_minimized.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btn_minimized.FlatAppearance.BorderSize = 0;
-            this.btn_minimized.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_minimized.ForeColor = System.Drawing.Color.White;
-            this.btn_minimized.Image = global::WorldSills2019_1_.Properties.Resources.icons8_m5acos_minimize_16;
-            this.btn_minimized.Location = new System.Drawing.Point(657, 0);
-            this.btn_minimized.Name = "btn_minimized";
-            this.btn_minimized.Size = new System.Drawing.Size(25, 25);
-            this.btn_minimized.TabIndex = 2;
-            this.btn_minimized.UseVisualStyleBackColor = false;
-            // 
-            // btn_Close
-            // 
-            this.btn_Close.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Close.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btn_Close.FlatAppearance.BorderSize = 0;
-            this.btn_Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Close.ForeColor = System.Drawing.Color.White;
-            this.btn_Close.Image = global::WorldSills2019_1_.Properties.Resources.icons8_shutdown_16;
-            this.btn_Close.Location = new System.Drawing.Point(682, 0);
-            this.btn_Close.Name = "btn_Close";
-            this.btn_Close.Size = new System.Drawing.Size(25, 25);
-            this.btn_Close.TabIndex = 1;
-            this.btn_Close.UseVisualStyleBackColor = false;
-            // 
             // dollar
             // 
             this.dollar.FlatAppearance.BorderSize = 0;
@@ -465,21 +465,21 @@
             this.dollar.TabIndex = 20;
             this.dollar.UseVisualStyleBackColor = false;
             // 
-            // panel1
+            // qwe
             // 
-            this.panel1.BackColor = System.Drawing.Color.RoyalBlue;
-            this.panel1.Location = new System.Drawing.Point(188, 537);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(134, 5);
-            this.panel1.TabIndex = 30;
+            this.qwe.BackColor = System.Drawing.Color.RoyalBlue;
+            this.qwe.Location = new System.Drawing.Point(188, 537);
+            this.qwe.Name = "qwe";
+            this.qwe.Size = new System.Drawing.Size(134, 5);
+            this.qwe.TabIndex = 30;
             // 
             // MaraphoneRegistration
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(707, 678);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.qwe);
+            this.Controls.Add(this.ewqeqw);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.label10);
@@ -552,9 +552,9 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel ewqeqw;
         private System.Windows.Forms.Button btn_Registration;
         private System.Windows.Forms.Button dollar;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel qwe;
     }
 }

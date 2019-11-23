@@ -51,6 +51,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Администрация\Admin_menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Администрация\Admin_menu.Designer.cs">
+      <DependentUpon>Admin_menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Бегун\Done_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Бегун\Done_Form.Designer.cs">
+      <DependentUpon>Done_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Бегун\Edit_Profile_Runner.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +113,12 @@
     <Compile Include="Общее\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Администрация\Admin_menu.resx">
+      <DependentUpon>Admin_menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Бегун\Done_Form.resx">
+      <DependentUpon>Done_Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Бегун\Edit_Profile_Runner.resx">
       <DependentUpon>Edit_Profile_Runner.cs</DependentUpon>
     </EmbeddedResource>
@@ -165,9 +183,7 @@
   <ItemGroup>
     <None Include="Resources\icons8_enter_2_32.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Администрация\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\icons8_arrow_pointing_left_32.png" />
   </ItemGroup>
