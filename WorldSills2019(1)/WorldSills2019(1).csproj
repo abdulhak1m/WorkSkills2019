@@ -57,6 +57,18 @@
     <Compile Include="Администрация\Admin_menu.Designer.cs">
       <DependentUpon>Admin_menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Администрация\DownloadCSV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Администрация\DownloadCSV.Designer.cs">
+      <DependentUpon>DownloadCSV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Администрация\Volunteer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Администрация\Volunteer.Designer.cs">
+      <DependentUpon>Volunteer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Бегун\Done_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +127,12 @@
     </Compile>
     <EmbeddedResource Include="Администрация\Admin_menu.resx">
       <DependentUpon>Admin_menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Администрация\DownloadCSV.resx">
+      <DependentUpon>DownloadCSV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Администрация\Volunteer.resx">
+      <DependentUpon>Volunteer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Бегун\Done_Form.resx">
       <DependentUpon>Done_Form.cs</DependentUpon>

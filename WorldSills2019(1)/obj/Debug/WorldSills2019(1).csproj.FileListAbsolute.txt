@@ -12,3 +12,21 @@ D:\Мои программы\WorldSills2019(1)\WorldSills2019(1)\obj\Debug\World
 D:\Мои программы\WorldSills2019(1)\WorldSills2019(1)\obj\Debug\WorldSills2019(1).csproj.CopyComplete
 D:\Мои программы\WorldSills2019(1)\WorldSills2019(1)\obj\Debug\WorldSills2019(1).exe
 D:\Мои программы\WorldSills2019(1)\WorldSills2019(1)\obj\Debug\WorldSills2019(1).pdb
+G:\Мои проекты\WorldSkills 2019\WorkSkills2019\WorldSills2019(1)\bin\Debug\WorldSills2019(1).exe.config
+G:\Мои проекты\WorldSkills 2019\WorkSkills2019\WorldSills2019(1)\bin\Debug\WorldSills2019(1).exe
+G:\Мои проекты\WorldSkills 2019\WorkSkills2019\WorldSills2019(1)\bin\Debug\WorldSills2019(1).pdb
+G:\Мои проекты\WorldSkills 2019\WorkSkills2019\WorldSills2019(1)\obj\Debug\WorldSills2019(1).csprojAssemblyReference.cache
+G:\Мои проекты\WorldSkills 2019\WorkSkills2019\WorldSills2019(1)\obj\Debug\WorldSills2019_1_.Администрация.Admin_menu.resources
+G:\Мои проекты\WorldSkills 2019\WorkSkills2019\WorldSills2019(1)\obj\Debug\WorldSills2019_1_.Бегун.Done_Form.resources
+G:\Мои проекты\WorldSkills 2019\WorkSkills2019\WorldSills2019(1)\obj\Debug\WorldSills2019_1_.Бегун.Edit_Profile_Runner.resources
+G:\Мои проекты\WorldSkills 2019\WorkSkills2019\WorldSills2019(1)\obj\Debug\WorldSills2019_1_.Home.resources
+G:\Мои проекты\WorldSkills 2019\WorkSkills2019\WorldSills2019(1)\obj\Debug\WorldSills2019_1_.Properties.Resources.resources
+G:\Мои проекты\WorldSkills 2019\WorkSkills2019\WorldSills2019(1)\obj\Debug\WorldSills2019_1_.Бегун.MaraphoneRegistration.resources
+G:\Мои проекты\WorldSkills 2019\WorkSkills2019\WorldSills2019(1)\obj\Debug\WorldSills2019_1_.Бегун.new_Runner.resources
+G:\Мои проекты\WorldSkills 2019\WorkSkills2019\WorldSills2019(1)\obj\Debug\WorldSills2019_1_.Бегун.Runner.resources
+G:\Мои проекты\WorldSkills 2019\WorkSkills2019\WorldSills2019(1)\obj\Debug\WorldSills2019_1_.Бегун.Runner_Menu.resources
+G:\Мои проекты\WorldSkills 2019\WorkSkills2019\WorldSills2019(1)\obj\Debug\WorldSills2019_1_.Общее.Login.resources
+G:\Мои проекты\WorldSkills 2019\WorkSkills2019\WorldSills2019(1)\obj\Debug\WorldSills2019(1).csproj.GenerateResource.cache
+G:\Мои проекты\WorldSkills 2019\WorkSkills2019\WorldSills2019(1)\obj\Debug\WorldSills2019(1).csproj.CopyComplete
+G:\Мои проекты\WorldSkills 2019\WorkSkills2019\WorldSills2019(1)\obj\Debug\WorldSills2019(1).exe
+G:\Мои проекты\WorldSkills 2019\WorkSkills2019\WorldSills2019(1)\obj\Debug\WorldSills2019(1).pdb

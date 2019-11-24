@@ -16,6 +16,7 @@ SELECT * FROM [Role]
 
 INSERT [Role] ([RoleId], [RoleName]) VALUES ('R', '¡Â„ÛÌ') 
 INSERT [Role] ([RoleId], [RoleName]) VALUES ('A', '¿‰ÏËÌËÒÚ‡ÚÓ')
+
 -- —Œ«ƒ¿Õ»≈ “¿¡À»÷€ œŒÀ‹«Œ¬¿“≈À≈…
 CREATE TABLE [User]
 (
@@ -47,6 +48,9 @@ CREATE TABLE Runner
 	[DateOfBirth]	DATETIME				NOT NULL,
 	[CountryCode]	NCHAR(3)				NOT NULL,
 )
+GO
+ALTER TABLE Runner
+ALTER COLUMN [DateOfBirth] DATETIME NOT NULL
 GO
 -- »«Ã≈Õﬂ≈Ã “»œ —“ŒÀ¡≈÷¿ ƒ¿“¿ –Œ∆ƒ≈Õ»ﬂ
 ALTER TABLE Runner
@@ -193,15 +197,15 @@ GO
 
 
 -- “¿¡À»÷¿ —œŒÕ—Œ–Œ¬
-CREATE TABLE [Sponsorship] (
-	[SponsorshipId]				INT IDENTITY(1,1)	NOT NULL,
-	[SponsorName]				NVARCHAR(150)		NOT NULL,
-	[RegistrationId]			INT					NOT NULL,
-	[Amount]					DECIMAL(10,2)		NOT NULL,
-	CONSTRAINT pk_Sponsorship	PRIMARY KEY ([SponsorshipId])
-);
-GO
-DROP TABLE Sponsorship
+--CREATE TABLE [Sponsorship] (
+--	[SponsorshipId]				INT IDENTITY(1,1)	NOT NULL,
+--	[SponsorName]				NVARCHAR(150)		NOT NULL,
+--	[RegistrationId]			INT					NOT NULL,
+--	[Amount]					DECIMAL(10,2)		NOT NULL,
+--	CONSTRAINT pk_Sponsorship	PRIMARY KEY ([SponsorshipId])
+--);
+--GO
+--DROP TABLE Sponsorship
 
 -- “¿¡À»÷¿ œ–≈ƒÀŒ∆≈Õ»…
 CREATE TABLE Offers
@@ -213,107 +217,7 @@ CREATE TABLE Offers
 GO
 
 -- User table
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.adkin@dayrep.net', N'jwZh2x@p', N'AHMAD', N'ADKIN', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.aldrich@gmail.com', N'9ApEdKdo', N'AARON', N'ALDRICH', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.allison@gmail.com', N'OPuDrw9O', N'ALPHONSO', N'ALLISON', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.arias@gmail.com', N'sFpGd60D', N'ANTONIO', N'ARIAS', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.ashton@saucedout.com', N'CPgaZBgb', N'ALFREDA', N'ASHTON', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.auber@ew.net', N'4jmwa6yH', N'ARTHUR', N'AUBER', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.barbosa@hotmail.com', N'QimhGU$d', N'ANGUS', N'BARBOSA', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.beaulieu@hotmail.com', N'qWOvG6TJ', N'ANTON', N'BEAULIEU', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.bitsuie@ramoz.com', N'7XbvvZud', N'APRIL', N'BITSUIE', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.black@milkwoodproductions.com', N'X$9rJpYU', N'ALEXANDRIA', N'BLACK', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.blum@gmail.com', N'JeHgbD@1', N'ALEX', N'BLUM', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.boulter@seeley.net', N'L$J7oyxv', N'AARON', N'BOULTER', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.bowden@gmail.com', N'1GFI@Xug', N'ANTON', N'BOWDEN', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.brennan@dayrep.net', N'scBTgwZL', N'ADELINE', N'BRENNAN', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.brooks@gmail.com', N'!79fwZYi', N'ARON', N'BROOKS', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.burnham@gmail.com', N'LQm0Db#m', N'ALFREDA', N'BURNHAM', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.campain@hotmail.com', N'6w1GMUFt', N'ABDUL-SAMI', N'CAMPAIN', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.candlish@gmail.com', N'NixV0GVc', N'ANGEL', N'CANDLISH', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.colvin@tyasa.com', N'OmVI2YOE', N'ANNABEL', N'COLVIN', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.connell@gmail.com', N'H0euIpYf', N'AMI', N'CONNELL', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.conrad@education.gov', N'zY@sNmN4', N'AISHA', N'CONRAD', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.copeland@hotmail.com', N'lZXF!0VX', N'ANKE', N'COPELAND', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.crews@gmail.com', N'YFUwZMq#', N'AUSTIN', N'CREWS', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.crockett@hotmail.com', N'o4Wvtdwy', N'ANIKA', N'CROCKETT', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.croft@outlook.com', N'hQankB0k', N'ANNELIESE', N'CROFT', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.crouch@gmail.com', N'fa5w!#$U', N'ANASTACIA', N'CROUCH', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.cryer@hotmail.com', N'!#C3zItn', N'ALTHEA', N'CRYER', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.currie@outlook.com', N'kwHCKJLX', N'ANDRES', N'CURRIE', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.darling@saucedout.com', N'N8cS1zY5', N'ALYSON', N'DARLING', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.daufeldt@gmail.com', N'HNb1ZfbI', N'ALYSSA', N'DAUFELDT', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.delatorre@gmail.com', N'tx@t71Qj', N'ALLIE', N'DELATORRE', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.doherty@tyasa.com', N'gYNiPBiZ', N'ADRIA', N'DOHERTY', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.dow@gmail.com', N'CHYfs2lR', N'APRIL', N'DOW', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.dyer@gmail.com', N'Y8OY9ZXw', N'AUDREY', N'DYER', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.easley@milkwoodproductions.com', N'CtOzRwtD', N'ALDO', N'EASLEY', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.emerson@education.gov', N'pTN5gvPr', N'ALDO', N'EMERSON', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.enbersbach@tyasa.com', N'1CcCFZ5U', N'AURORA', N'ENBERSBACH', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.enckelman@gmail.com', N'8h7qHHgg', N'ADRIANNE', N'ENCKELMAN', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.enriquez@hotmail.com', N'BDqAGuaR', N'ASHTON', N'ENRIQUEZ', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.erwin@gmail.com', N'HrKvRwBx', N'ASHLEY', N'ERWIN', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.farrell@gmail.com', N'vDw2CWzp', N'ANTHONY', N'FARRELL', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.faust@gmail.com', N'9tFBWRmy', N'AGUSTIN', N'FAUST', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.foley@gmail.com', N'n5KhkHpw', N'ADELA', N'FOLEY', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.gale@gmail.com', N'a!FxkIkZ', N'ALTHEA', N'GALE', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.glass@outlook.com', N'p5H2o@h6', N'ALLAN', N'GLASS', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.gray@hotmail.com', N'xll9uZAk', N'ALFONSO', N'GRAY', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.hardy@nord.net', N'5AsS7REB', N'ALPHONSO', N'HARDY', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.harris@saucedout.com', N'lGVrvS!K', N'ADRIENNE', N'HARRIS', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.heimann@gmail.com', N'fTcya2HR', N'ALEXA', N'HEIMANN', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.hill@tyasa.com', N'yw$HahDi', N'ANDREA', N'HILL', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.holden@gmail.com', N'aZuLptLI', N'ANNMARIE', N'HOLDEN', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.howe@gmail.com', N'l7FLpGzL', N'AMERICA', N'HOWE', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.jimenez@gmail.com', N'@KdSeMWg', N'ARNOLD', N'JIMENEZ', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.kaplan@milkwoodproductions.com', N'S3#$veIk', N'AUREA', N'KAPLAN', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.keener@keef.com', N'IX76175j', N'ANDRES', N'KEENER', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.kelley@gmail.com', N'sNgtLv7b', N'ALPHONSO', N'KELLEY', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.kiel@gmail.com', N'hH#l4IIP', N'ANTONINA', N'KIEL', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.knox@keef.com', N'@gnYMnkM', N'ALLAN', N'KNOX', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.lary@hotmail.com', N'Gpzj6J0r', N'AHMED', N'LARY', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.liikanen@gmail.com', N'2s!6Tj57', N'ARMAND', N'LIIKANEN', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.lilly@hotmail.com', N'qWZV08c$', N'ALANNA', N'LILLY', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.linn@gmail.com', N'VJn@$e2L', N'AMALIA', N'LINN', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.longwell@dayrep.net', N'PydicEo9', N'ALDO', N'LONGWELL', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.lusk@gmail.com', N'9m!448#g', N'ANDRE', N'LUSK', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.manning@gmail.com', N'kW9rcjNX', N'ALAN', N'MANNING', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.marshall@gmail.com', N'KZPGJwj6', N'ADRIANE', N'MARSHALL', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.martabano@gmail.com', N'YayOEcvm', N'ABRAHAM', N'MARTABANO', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.mcclure@gmail.com', N'Xw9OeeKZ', N'AUGUSTUS', N'MCCLURE', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.mccollum@hotmail.com', N'#2CQddoy', N'AJA', N'MCCOLLUM', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.mcintosh@gmail.com', N'Ej3ydhMc', N'ALASTAIR', N'MCINTOSH', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.mcleod@dayrep.net', N'baZNHnLr', N'ANNABEL', N'MCLEOD', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.mcnair@yahoo.com', N'u0ur!diH', N'ALDO', N'MCNAIR', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.meier@gmail.com', N'!EYdiDL8', N'AUBREY', N'MEIER', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.metz@gmail.com', N'Pd3vW84r', N'AFTON', N'METZ', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.meyer@gmail.com', N'ULPA!03I', N'ADAM', N'MEYER', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.meza@gmail.com', N'HMgECMWU', N'AGUSTIN', N'MEZA', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.montoya@education.gov', N'adO38G$I', N'ANGUS', N'MONTOYA', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.moon@education.gov', N'k@8GIg#9', N'ARCHIE', N'MOON', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.mosley@gmail.com', N'ibKF2bq#', N'ALINE SOUZA', N'MOSLEY', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.mosley@hotmail.com', N'FhM0iUfK', N'ALEXIS', N'MOSLEY', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.oneal@dayrep.net', N'nudl7I!5', N'ARMANDO', N'ONEAL', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.pace@gmail.com', N'yOZO!V#5', N'ALICIA', N'PACE', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.papasergi@manda.com', N'QcJ6beMj', N'AISHA', N'PAPASERGI', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.parks@hotmail.com', N'zTyuU1sE', N'AMALIA', N'PARKS', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.peasley@gmail.com', N'gGfSZaz7', N'ANTHONY', N'PEASLEY', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.pedrozo@gmail.com', N'vGbKQysb', N'AMPARO', N'PEDROZO', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.pennington@gmail.com', N'PWqib29a', N'ADOLPH', N'PENNINGTON', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.perigo@hotmail.com', N'BIWpwFaS', N'AMBER', N'PERIGO', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.peterson@hotmail.com', N'l#qFu#xv', N'ADRIAN', N'PETERSON', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.pimentel@gmail.com', N'B0XttMcW', N'ADELL', N'PIMENTEL', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.poore@gmail.com', N'0jFw!eu2', N'ANTHONY', N'POORE', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.prater@hotmail.com', N'bvq02A9i', N'ANGIE', N'PRATER', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.presley@dayrep.net', N'l7gkjE6#', N'ANTWAN', N'PRESLEY', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.rockwell@gmail.com', N'sWlX1L!z', N'ADELA', N'ROCKWELL', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.rodeigues@manda.com', N'W2$0#1A2', N'ALLAN', N'RODEIGUES', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.rowland@gmail.com', N'lcWv#6IP', N'ASHLEY', N'ROWLAND', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.rowland@hotmail.com', N'RZ#7$2sK', N'ALAN', N'ROWLAND', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.russell@outlook.com', N'WF@VFpmG', N'ALINE FERNANDES', N'RUSSELL', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.ruta@gmail.com', N'hYpU2w8G', N'ANTHONY', N'RUTA', N'R');
-INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.sama@keef.com', N'66vN@kDw', N'ASHLIE', N'SAMA', N'R');
-GO
+-- «¿œŒÀÕﬂ≈Ã “¿¡À»÷” œŒÀ‹«Œ¬¿“≈À≈… ƒ¿ÕÕ€Ã»
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.sellers@gmail.com', N'kJngErtj', N'AL', N'SELLERS', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.shields@outlook.com', N'1xI7LyqA', N'ANGELO', N'SHIELDS', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'a.skelton@gmail.com', N'FVq7eDu8', N'ALTA', N'SKELTON', N'R');
@@ -414,7 +318,7 @@ INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'alan@nord.net', N'jSaeUZNr', N'ALAN', N'GARZA', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'alandrum11@gmail.com', N'doEux7Eb', N'ANNA', N'LANDRUM', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'alandrum134@gmail.com', N'Zwo2nIbL', N'ANTONE', N'LANDRUM', N'R');
-GO
+--GO
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'alangley317@gmail.com', N'U3wQILc3', N'ARDEN', N'LANGLEY', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'alastair.livingston@outlook.com', N'@7BZ!qfy', N'ALASTAIR', N'LIVINGSTON', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'alastair@milkwoodproductions.com', N'yCutz$7F', N'ALASTAIR', N'WINSTON', N'R');
@@ -515,7 +419,7 @@ INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'angie.bright@hr.gov', N'pHcKTUoZ', N'ANGIE', N'BRIGHT', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'anglea.dixon@hotmail.com', N'Gp4rSLw5', N'ANGLEA', N'DIXON', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'angus.brannigan@outlook.com', N'MSE2y$3B', N'ANGUS', N'BRANNIGAN', N'R');
-GO
+--GO
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'angus.bryne@yahoo.com', N'DWQrOjaP', N'ANGUS', N'BRYNE', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'angus.kramer@yahoo.com', N'!woebeau', N'ANGUS', N'KRAMER', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'angus.ventura@outlook.com', N'4sISLDwL', N'ANGUS', N'VENTURA', N'R');
@@ -616,7 +520,7 @@ INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'b.denton@gmail.com', N'LwqEMWqg', N'BEULAH', N'DENTON', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'b.dupree@gmail.com', N'rnvBrRPO', N'BRITT', N'DUPREE', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'b.eastman@gmail.com', N'hzda63i$', N'BECKY', N'EASTMAN', N'R');
-GO
+--GO
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'b.espinoza@hotmail.com', N'cFTzagNg', N'BRADFORD', N'ESPINOZA', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'b.evans@saucedout.com', N'wHu6Y4jz', N'BRYCE', N'EVANS', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'b.ezell@gmail.com', N'MZrmW#lJ', N'BECKY', N'EZELL', N'R');
@@ -717,7 +621,7 @@ INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'bennett.longoria@seeley.net', N'txDO6c6T', N'BENNETT', N'LONGORIA', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'bennie.padilla@ew.net', N'IDjmZ8Z!', N'BENNIE', N'PADILLA', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'bennie.robles@keef.com', N'G8K66OcQ', N'BENNIE', N'ROBLES', N'R');
-GO
+--GO
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'bennie@manda.com', N'Bwb6Ex76', N'BENNIE', N'MONTOYA', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'benny.klein@outlook.com', N'7dKG!s7b', N'BENNY', N'KLEIN', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'benny@ramoz.com', N'bhxXVlam', N'BENNY', N'KURTZ', N'R');
@@ -818,7 +722,7 @@ INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'brittani.cisneros@gmail.com', N'9I#iQcIR', N'BRITTANI', N'CISNEROS', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'brittani.hicks@tyasa.com', N'kFBqWV0G', N'BRITTANI', N'HICKS', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'brittany.brand@hotmail.com', N'2fXUhVps', N'BRITTANY', N'BRAND', N'R');
-GO
+--GO
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'brittany.champion@gmail.com', N'KGaPDuZL', N'BRITTANY', N'CHAMPION', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'brock.workman@gmail.com', N'481viqf0', N'BROCK', N'WORKMAN', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'brodie.hieber@outlook.com', N'nLp1IYrn', N'BRODIE', N'HIEBER', N'R');
@@ -919,7 +823,7 @@ INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'c.hodges@gmail.com', N'qFMg9P71', N'CAROLE', N'HODGES', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'c.horne@dayrep.net', N'87290q7f', N'CHRISTI', N'HORNE', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'c.houston@milkwoodproductions.com', N'S2izwbI4', N'CECILIA', N'HOUSTON', N'R');
-GO
+--GO
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'c.huddleston@yahoo.com', N'8C2!u6Jh', N'CORRINE', N'HUDDLESTON', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'c.huffman@keef.com', N'vwMxc!v3', N'CORINE', N'HUFFMAN', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'c.humphrey@gmail.com', N'4Upk28kN', N'CANDY', N'HUMPHREY', N'R');
@@ -1020,7 +924,7 @@ INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'cameron.schafer@keef.com', N'K@JuTFtF', N'CAMERON', N'SCHAFER', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'cameron@education.gov', N'6Qa9#QOS', N'CAMERON', N'SERRANO', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'camilla.gallegos@keef.com', N'B$MvjU97', N'CAMILLA', N'GALLEGOS', N'R');
-GO
+--GO
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'camille.main@seeley.net', N'UWsYDOfX', N'CAMILLE', N'MAIN', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'campbell@gmail.com', N'RK8OEzEW', N'CAMPBELL', N'ACEVEDO', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'candace@hotmail.com', N'O$HizdyP', N'CANDACE', N'NABOURS', N'R');
@@ -1121,7 +1025,7 @@ INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'cheri@ew.net', N'0Gy!Rbci', N'CHERI', N'SIMS', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'cheri@outlook.com', N'6q2cYPoy', N'CHERI', N'CHAN', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'cherie.flint@ramoz.com', N'dAY$cRtj', N'CHERIE', N'FLINT', N'R');
-GO
+--GO
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'cherie@keef.com', N'jMZ!UWUm', N'CHERIE', N'FERREIRA', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'cherise.vasquez@gmail.com', N'Vmb7qMWj', N'CHERISE', N'VASQUEZ', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'cherise@gmail.com', N'M$f!eDt$', N'CHERISE', N'GUIDRY', N'R');
@@ -1222,7 +1126,7 @@ INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'cpreston176@gmail.com', N'j7!2gy05', N'CASANDRA', N'PRESTON', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'cprince218@gmail.com', N'sV1Z4kHp', N'CAMERON', N'PRINCE', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'cragland116@hotmail.com', N'$wdpA@BW', N'CARMEN', N'RAGLAND', N'R');
-GO
+--GO
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'cramirez186@hotmail.com', N'N3KsYYmM', N'CORY', N'RAMIREZ', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'crichey156@gmail.com', N'n3FfR7PO', N'CLARA', N'RICHEY', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'cridley7@ramoz.com', N'4RMLdpQo', N'CHARISSA', N'RIDLEY', N'R');
@@ -1323,7 +1227,7 @@ INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'd.munis@gmail.com', N'8OiqwHf3', N'DEAN', N'MUNIS', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'd.oliveira@gmail.com', N'rclUbchd', N'DAYNA', N'OLIVEIRA', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'd.oliveira@nster.gov', N'A!O0$X8F', N'DARIUS', N'OLIVEIRA', N'R');
-GO
+--GO
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'd.phipps@finance.gov', N'Lws0cLkn', N'DARLENE', N'PHIPPS', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'd.pickett@hotmail.com', N'avFiI5kK', N'DELBERT', N'PICKETT', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'd.pope@hotmail.com', N'9f7IPWjP', N'DEBRA', N'POPE', N'R');
@@ -1424,7 +1328,7 @@ INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'ddawkins278@gmail.com', N'ykB!gInB', N'DONNY', N'DAWKINS', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'ddiamond274@nord.net', N'3CcU@J05', N'DENVER', N'DIAMOND', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'ddietrich13@outlook.com', N'SPNtof@F', N'DIEGO', N'DIETRICH', N'R');
-GO
+--GO
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'ddobson167@gmail.com', N'sY4$fDVb', N'DONNELL', N'DOBSON', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'ddowling197@gmail.com', N'vf$m5CH3', N'DELORA', N'DOWLING', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'ddubois90@gmail.com', N'jGYfWsXe', N'DEANA', N'DUBOIS', N'R');
@@ -1525,7 +1429,7 @@ INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'dominique.prado@gmail.com', N'vORrkl33', N'DOMINIQUE', N'PRADO', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'don@ew.net', N'wRwwDn79', N'DON', N'RODRIQUEZ', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'dona.calvert@tyasa.com', N'9LNQxx87', N'DONA', N'CALVERT', N'R');
-GO
+--GO
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'donald.dickerson@gmail.com', N'8Kh7yqV3', N'DONALD', N'DICKERSON', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'donald@frogmail.com', N'7VPmxka5', N'DONALD', N'ELMORE', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'donald@gmail.com', N'16ZWz5pv', N'DONALD', N'SCHULTZ', N'R');
@@ -1626,7 +1530,7 @@ INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'e.newcomb@tyasa.com', N'OcQEZ$QL', N'EMMETT', N'NEWCOMB', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'e.nunez@gmail.com', N'Gqi1DGgJ', N'ERICKA', N'NUNEZ', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'e.oldroyd@hotmail.com', N'xs8SzGE1', N'ELLIS', N'OLDROYD', N'R');
-GO
+--GO
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'e.oliver@manda.com', N'B18e2Eb1', N'ELISHA', N'OLIVER', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'e.oneill@hotmail.com', N'2E6!Y4@#', N'EDGAR', N'ONEILL', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'e.pedrozo@gmail.com', N'#3$1v6n!', N'ESSIE', N'PEDROZO', N'R');
@@ -1727,7 +1631,7 @@ INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'elias@gmail.com', N'TOm30g1A', N'ELIAS', N'MCRAE', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'elinor@ramoz.com', N'8I5Zdhox', N'ELINOR', N'VELASCO', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'elisabeth.batman@hotmail.com', N'@y!IcdpW', N'ELISABETH', N'BATMAN', N'R');
-GO
+--GO
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'elisabeth.tillotson@gmail.com', N'PONDqLw9', N'ELISABETH', N'TILLOTSON', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'elisha@sizzling.com', N'r30tO7Eq', N'ELISHA', N'HANDAL', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'eliza.adkin@gmail.com', N'#hAzlFHS', N'ELIZA', N'ADKIN', N'R');
@@ -1828,7 +1732,7 @@ INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'evonne.valle@gmail.com', N'BGlHW!75', N'EVONNE', N'VALLE', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'ewakefield499@gmail.com', N'r1!jD3#m', N'EBONI', N'WAKEFIELD', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'ewoodall253@gmail.com', N'eThhBzVF', N'ERIKA', N'WOODALL', N'R');
-GO
+--GO
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'ezekiel@milkwoodproductions.com', N'wu1w2hnW', N'EZEKIEL', N'OJEDA', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'f.abbott@ew.net', N'76pKndKl', N'FORREST', N'ABBOTT', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'f.avila@saucedout.com', N'dRR7XSJf', N'FREDDIE', N'AVILA', N'R');
@@ -1929,7 +1833,7 @@ INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'finn@ramoz.com', N'mH3pdYSF', N'FINN', N'RICHMOND', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'fjeffries167@gmail.com', N'Hh5HE4yB', N'FINN', N'JEFFRIES', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'fjorgensen255@gmail.com', N'rgTE2X$k', N'FOREST', N'JORGENSEN', N'R');
-GO
+--GO
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'fkilgore172@gmail.com', N'Wj3hi4Iy', N'FABIAN', N'KILGORE', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'fletcher.gage@gmail.com', N'FQMDhGXT', N'FLETCHER', N'GAGE', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'fletcher.jeffers@hotmail.com', N'Sf3nJ6r2', N'FLETCHER', N'JEFFERS', N'R');
@@ -2030,7 +1934,7 @@ INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'g.mooney@gmail.com', N'g@EPEngf', N'GERTRUDE', N'MOONEY', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'g.munson@hotmail.com', N'o2cwEq8h', N'GRETTA', N'MUNSON', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'g.ojeda@tyasa.com', N'KYcU5#Au', N'GILDA', N'OJEDA', N'R');
-GO
+--GO
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'g.park@seeley.net', N'$tdtwxLN', N'GERDA', N'PARK', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'g.pepper@hotmail.com', N'RwmVYVsx', N'GENE', N'PEPPER', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'g.purcell@gmail.com', N'HS9ZcO6O', N'GARY', N'PURCELL', N'R');
@@ -2131,7 +2035,7 @@ INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'glenn@sizzling.com', N'Cf5VtBvj', N'GLENN', N'EMARD', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'gloria.mccorkle@yahoo.com', N'NjgHVZqb', N'GLORIA', N'MCCORKLE', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'gloria.mercer@hotmail.com', N'L0S5rXRk', N'GLORIA', N'MERCER', N'R');
-GO
+--GO
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'gloria@gmail.com', N'o6@M7p7h', N'GLORIA', N'WHITTEN', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'gmartinez311@manda.com', N'AXjjX8zM', N'GAYE', N'MARTINEZ', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'gmcclure8@gmail.com', N'FDM4fngz', N'GERMAN', N'MCCLURE', N'R');
@@ -2232,7 +2136,7 @@ INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'h.preston@hotmail.com', N'9ay61ll8', N'HUGH', N'PRESTON', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'h.price@gmail.com', N'$dJakZ0K', N'HONG', N'PRICE', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'h.roth@nord.net', N'rw78tWUu', N'HAL', N'ROTH', N'R');
-GO
+--GO
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'h.rush@sizzling.com', N'yyEjT9YU', N'HILTON', N'RUSH', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'h.sarkis@tyasa.com', N'UpLRFakz', N'HUMBERTO', N'SARKIS', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'h.sheldon@gmail.com', N'@bg2KCzZ', N'HEIDI', N'SHELDON', N'R');
@@ -2333,7 +2237,7 @@ INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'huong@hotmail.com', N'!D02Z#0R', N'HUONG', N'NACHOR', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'i.aragon@outlook.com', N'8!$l9bYR', N'ISIAH', N'ARAGON', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'i.blair@gmail.com', N'e1JlUtrw', N'ILIANA', N'BLAIR', N'R');
-GO
+--GO
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'i.bolognia@hotmail.com', N'Fjkqj0kN', N'IRA', N'BOLOGNIA', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'i.buck@gmail.com', N'mH0zLUMW', N'IN', N'BUCK', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'i.burnard@nster.gov', N'EBlOmWF9', N'ISSAC', N'BURNARD', N'R');
@@ -2434,7 +2338,7 @@ INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'j.boulos@gmail.com', N'71jvSPEU', N'JULIET', N'BOULOS', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'j.bowes@gmail.com', N'o24m5zj!', N'JANET', N'BOWES', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'j.bray@hotmail.com', N'ADja!WMa', N'JIMMIE', N'BRAY', N'R');
-GO
+--GO
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'j.brinkley@hotmail.com', N'KTg0yO8t', N'JAYNE', N'BRINKLEY', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'j.bryne@gmail.com', N'x6rxdGxc', N'JUDITH', N'BRYNE', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'j.bullard@education.gov', N'0VM2miLA', N'JANE', N'BULLARD', N'R');
@@ -2535,7 +2439,7 @@ INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'j.santos@hotmail.com', N'6RE4DQFC', N'JAY', N'SANTOS', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'j.schillinger@milkwoodproductions.com', N'ZDhbHj!A', N'JEREMIAH', N'SCHILLINGER', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'j.shepard@gmail.com', N'#uBOOL4w', N'JAYNE', N'SHEPARD', N'R');
-GO
+--GO
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'j.sheppard@sizzling.com', N'ov#JmL3h', N'JERMAINE', N'SHEPPARD', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'j.shuler@gmail.com', N'GgsJRiXB', N'JIMMIE', N'SHULER', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'j.skelton@ew.net', N'Q0km0!9H', N'JOELLE', N'SKELTON', N'R');
@@ -2636,7 +2540,7 @@ INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'jean.cameron@seeley.net', N'e1aPE9F!', N'JEAN', N'CAMERON', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'jean.porter@gmail.com', N'wNKHPc7z', N'JEAN', N'PORTER', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'jeana.schemmer@hotmail.com', N'RNw!3NTX', N'JEANA', N'SCHEMMER', N'R');
-GO
+--GO
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'jeanine.hayden@ramoz.com', N'GaAK!jJS', N'JEANINE', N'HAYDEN', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'jeanna.gee@hotmail.com', N'oqyeo7fX', N'JEANNA', N'GEE', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'jeanna@outlook.com', N'wX5JN#TS', N'JEANNA', N'ROWE', N'R');
@@ -2737,7 +2641,7 @@ INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'jordan@gmail.com', N'WkLFS3Aw', N'JORDAN', N'MOSS', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'jordon.ackerman@gmail.com', N'MJgyAe2L', N'JORDON', N'ACKERMAN', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'jordon.bernal@gmail.com', N'ynIM1S2A', N'JORDON', N'BERNAL', N'R');
-GO
+--GO
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'jorge.drescher@ew.net', N'ZylZrv0#', N'JORGE', N'DRESCHER', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'jose@education.gov', N'EnTXNaD5', N'JOSE', N'ZANE', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'jose@gmail.com', N'L2X5EV0r', N'JOSE', N'BOND', N'R');
@@ -2838,7 +2742,7 @@ INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'k.lipkin@dayrep.net', N'@UKjkjM@', N'KATHARINE', N'LIPKIN', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'k.madrid@gmail.com', N'gavdi3Ku', N'KURT', N'MADRID', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'k.mccorkle@gmail.com', N'#VtXdklQ', N'KATE', N'MCCORKLE', N'R');
-GO
+--GO
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'k.mejia@gmail.com', N'Ik3Vxdy8', N'KIRSTIN', N'MEJIA', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'k.meteer@gmail.com', N'aX1GixVv', N'KACIE', N'METEER', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'k.moses@gmail.com', N'Ekdra1bN', N'KENYA', N'MOSES', N'R');
@@ -2939,7 +2843,7 @@ INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'kenneth@frogmail.com', N'BHYCz8c!', N'KENNETH', N'COLE', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'kenneth@gmail.com', N'Mgoe6Gs#', N'KENNETH', N'DISCIPIO', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'kennith.bonner@seeley.net', N'sAjOQEtF', N'KENNITH', N'BONNER', N'R');
-GO
+--GO
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'kenny@gmail.com', N'05SEvR0T', N'KENNY', N'MCCLAIN', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'kenya.whitmore@gmail.com', N's8HWoxH4', N'KENYA', N'WHITMORE', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'kermit.baker@gmail.com', N'BQ9!TDty', N'KERMIT', N'BAKER', N'R');
@@ -3040,7 +2944,7 @@ INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'l.carmichael@gmail.com', N'B5pu75BP', N'LEILA', N'CARMICHAEL', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'l.catt@gmail.com', N'niLeNfcF', N'LORRIE', N'CATT', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'l.cherry@milkwoodproductions.com', N'$vkfYpe2', N'LYLA', N'CHERRY', N'R');
-GO
+--GO
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'l.contreras@gmail.com', N'mmpiU4bi', N'LINDSEY', N'CONTRERAS', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'l.couture@saucedout.com', N'qqIn7TFE', N'LUIZ', N'COUTURE', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'l.crowder@hotmail.com', N'iCwqhow2', N'LORENA', N'CROWDER', N'R');
@@ -3141,7 +3045,7 @@ INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'lacey.buckner@yahoo.com', N'W8ScHFmC', N'LACEY', N'BUCKNER', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'lacey.frazier@nster.gov', N'$UOlqLBQ', N'LACEY', N'FRAZIER', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'lacy.jarrell@gmail.com', N'0x2RBYpn', N'LACY', N'JARRELL', N'R');
-GO
+--GO
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'lacy.nickerson@manda.com', N'Q1iVERpX', N'LACY', N'NICKERSON', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'lakeisha.poirier@gmail.com', N'0A56gTyO', N'LAKEISHA', N'POIRIER', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'lakeshia@outlook.com', N'ZB6ushri', N'LAKESHIA', N'PARKER', N'R');
@@ -3242,7 +3146,7 @@ INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'lester@gmail.com', N'OAUxU6DI', N'LESTER', N'AHLE', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'letÌcia.laurie@gmail.com', N'VJNmc0hR', N'LETÕCIA', N'LAURIE', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'letÌcia@hotmail.com', N'PKCk3UYw', N'LETÕCIA', N'MCCORMACK', N'R');
-GO
+--GO
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'lettie.randle@sizzling.com', N'CQ!S1UhL', N'LETTIE', N'RANDLE', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'lewis.merced@gmail.com', N'!4dtvaTy', N'LEWIS', N'MERCED', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'lewis@dayrep.net', N'3n827lp!', N'LEWIS', N'HULL', N'R');
@@ -3343,7 +3247,7 @@ INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'lramsey299@hotmail.com', N'1ITEvPkh', N'LESSIE', N'RAMSEY', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'lroark232@gmail.com', N'1Pv1PNa0', N'LYNDON', N'ROARK', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'lryan412@gmail.com', N'Bq2FY4Ta', N'LANNY', N'RYAN', N'R');
-GO
+--GO
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'lsavage216@tyasa.com', N'7FzCwspZ', N'LATRICE', N'SAVAGE', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'lseverino231@gmail.com', N'y1S4X3IE', N'LETITIA', N'SEVERINO', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'lshepherd171@hotmail.com', N'boSnma$s', N'LESLIE', N'SHEPHERD', N'R');
@@ -3444,7 +3348,7 @@ INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'm.dickens@gmail.com', N'MGbSQ8pO', N'MALCOLM', N'DICKENS', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'm.donald@hotmail.com', N'jdJncGl1', N'MINERVA', N'DONALD', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'm.dotson@hotmail.com', N'hkjf1Vri', N'MARLA', N'DOTSON', N'R');
-GO
+--GO
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'm.dubaldi@hotmail.com', N'SpyShUiN', N'MICHELLE', N'DUBALDI', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'm.duff@hotmail.com', N'c1UrE$ZN', N'MAYA', N'DUFF', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'm.duran@nord.net', N'wrfgjt$V', N'MABLE', N'DURAN', N'R');
@@ -3545,7 +3449,7 @@ INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'm.spencer@gmail.com', N'wO8J3FgL', N'MIRIAN', N'SPENCER', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'm.staley@gmail.com', N'96WlLEZL', N'MARISOL', N'STALEY', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'm.starnes@keef.com', N'qpFP8@h0', N'MERCY', N'STARNES', N'R');
-GO
+--GO
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'm.stevens@gmail.com', N'OF8#7dru', N'MELISA', N'STEVENS', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'm.stewart@gmail.com', N'bpnRhvgL', N'MITCHELL', N'STEWART', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'm.strange@hotmail.com', N'CcVmk5DU', N'MAUDIE', N'STRANGE', N'R');
@@ -3646,7 +3550,7 @@ INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'marissa@gmail.com', N'rh0SOIMA', N'MARISSA', N'POTTS', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'marita.estes@gmail.com', N'Hq0tFCBR', N'MARITA', N'ESTES', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'mark.harabedian@nord.net', N'x7IFTYcb', N'MARK', N'HARABEDIAN', N'R');
-GO
+--GO
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'marla@gmail.com', N'LGPY@1j3', N'MARLA', N'HILLS', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'marlene.mcbride@gmail.com', N'2q7tlt4F', N'MARLENE', N'MCBRIDE', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'marlon.blum@hotmail.com', N'@NzL1fdE', N'MARLON', N'BLUM', N'R');
@@ -3747,7 +3651,7 @@ INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'micah.storment@seeley.net', N'A1Ggq$Ri', N'MICAH', N'STORMENT', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'michael.hines@education.gov', N'YWf$xWRI', N'MICHAEL', N'HINES', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'michael.pittman@gmail.com', N'Wi2B3u9h', N'MICHAEL', N'PITTMAN', N'R');
-GO
+--GO
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'michael@ew.net', N'HspMAqWs', N'MICHAEL', N'CROWELL', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'michal.sheldon@hr.gov', N'cxQqridk', N'MICHAL', N'SHELDON', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'micheal.byers@seeley.net', N'ODsOjF#k', N'MICHEAL', N'BYERS', N'R');
@@ -3848,7 +3752,7 @@ INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'mybarra380@sizzling.com', N'$O1yq0LY', N'MATILDA', N'YBARRA', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'myles@outlook.com', N'dJ@NL1S#', N'MYLES', N'ROCHA', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'myra@hotmail.com', N'BWdu!D7O', N'MYRA', N'COFFMAN', N'R');
-GO
+--GO
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'myron.foller@hotmail.com', N'cd8ezoeR', N'MYRON', N'FOLLER', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'myrtle.hartman@ew.net', N'YJ4E70D9', N'MYRTLE', N'HARTMAN', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'mzeigler192@hotmail.com', N'KeC9SRdU', N'MARK', N'ZEIGLER', N'R');
@@ -3949,7 +3853,7 @@ INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'nicholas@gmail.com', N'MyWLy9YE', N'NICHOLAS', N'BUSCH', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'nicholas@hotmail.com', N'rHo$pJgF', N'NICHOLAS', N'ORR', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'nick.long@gmail.com', N'$nj4c!HQ', N'NICK', N'LONG', N'R');
-GO
+--GO
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'nicolas.kruse@ew.net', N'ftl$P@7U', N'NICOLAS', N'KRUSE', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'nicolas.leonard@gmail.com', N'x1!#BYau', N'NICOLAS', N'LEONARD', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'nicolas.varriano@gmail.com', N'kLTuqV38', N'NICOLAS', N'VARRIANO', N'R');
@@ -4050,7 +3954,7 @@ INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'osvaldo.fagan@gmail.com', N'bgftFNBJ', N'OSVALDO', N'FAGAN', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'osvaldo@outlook.com', N'vFH9fn@3', N'OSVALDO', N'OLES', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'oswaldo@gmail.com', N'6dFWQOwl', N'OSWALDO', N'GOODSON', N'R');
-GO
+--GO
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'otang370@ew.net', N'9fK0Mg!s', N'OFELIA', N'TANG', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'otavio.hodges@hotmail.com', N'BYqpzQ5p', N'OTAVIO', N'HODGES', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'otilia.dickson@hr.gov', N'IXXz3dXN', N'OTILIA', N'DICKSON', N'R');
@@ -4151,7 +4055,7 @@ INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'pete.schaeffer@ew.net', N'z723wie9', N'PETE', N'SCHAEFFER', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'pete@gmail.com', N'0!KF3#pC', N'PETE', N'MAYBERRY', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'peter.mueller@nster.gov', N'lV!MRw8E', N'PETER', N'MUELLER', N'R');
-GO
+--GO
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'petra.burrell@outlook.com', N'kTOoGzep', N'PETRA', N'BURRELL', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'petra.cason@gmail.com', N'jGF27cZa', N'PETRA', N'CASON', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'phickman67@gmail.com', N'7F0VT3CF', N'PAT', N'HICKMAN', N'R');
@@ -4252,7 +4156,7 @@ INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'r.meads@hotmail.com', N'O2$UGe!D', N'RAMIRO', N'MEADS', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'r.menter@gmail.com', N'4QtAn$7O', N'ROMEO', N'MENTER', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'r.metz@hotmail.com', N'gFxxK5K7', N'REYNALDO', N'METZ', N'R');
-GO
+--GO
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'r.meza@gmail.com', N'U9qXZyxY', N'RAPHAEL', N'MEZA', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'r.michael@hr.gov', N'R4Ao#pid', N'RENE', N'MICHAEL', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'r.mitchell@saucedout.com', N'rR5cMGjo', N'RORY', N'MITCHELL', N'R');
@@ -4353,7 +4257,7 @@ INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'reynaldo@gmail.com', N'W8$6$zJA', N'REYNALDO', N'LESTER', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'rfarr245@gmail.com', N'iriIzNpq', N'ROSEMARIE', N'FARR', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'rfelger251@ew.net', N'Kdbpj!Mx', N'RACHEAL', N'FELGER', N'R');
-GO
+--GO
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'rflynn111@nord.net', N'oRyOxcJY', N'RHEA', N'FLYNN', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'rfredicks462@hr.gov', N'rNZZ0kks', N'ROMEO', N'FREDICKS', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'rfrey268@seeley.net', N'5r3G@6ob', N'ROCCO', N'FREY', N'R');
@@ -4454,7 +4358,7 @@ INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'roman.marks@gmail.com', N'cg6PERcA', N'ROMAN', N'MARKS', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'romeo.foley@outlook.com', N'ZB!#@iGb', N'ROMEO', N'FOLEY', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'romeo.lord@nord.net', N'kc9$GfSo', N'ROMEO', N'LORD', N'R');
-GO
+--GO
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'romeo@ew.net', N'abl@S6Sk', N'ROMEO', N'AUFFREY', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'ron.couch@hr.gov', N'@ry7NDUA', N'RON', N'COUCH', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'ron@dayrep.net', N'ZUUNeE#2', N'RON', N'SOLIS', N'R');
@@ -4555,7 +4459,7 @@ INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N's.guthrie@gmail.com', N'aXAEzBxD', N'SHANON', N'GUTHRIE', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N's.gwalthney@gmail.com', N'C@z5o7iU', N'STERLING', N'GWALTHNEY', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N's.hagan@gmail.com', N'EZnFWLfK', N'SHELIA', N'HAGAN', N'R');
-GO
+--GO
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N's.hagele@gmail.com', N'5@Zk5KTM', N'SHELBY', N'HAGELE', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N's.haines@seeley.net', N'U1V7f0oB', N'SHERMAN', N'HAINES', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N's.hanafan@gmail.com', N'PW@hS8$n', N'SARAH', N'HANAFAN', N'R');
@@ -4656,7 +4560,7 @@ INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'sally@gmail.com', N'jL$!8pEU', N'SALLY', N'SHORT', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'salvador.jeanty@ew.net', N'crYII6sK', N'SALVADOR', N'JEANTY', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'salvatore.simons@milkwoodproductions.com', N'Cx$N4sRU', N'SALVATORE', N'SIMONS', N'R');
-GO
+--GO
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'sam.herman@hotmail.com', N'IFNTWRKF', N'SAM', N'HERMAN', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'samatha@dayrep.net', N'rU6kFwLH', N'SAMATHA', N'MULLEN', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'sammie.dickens@outlook.com', N'qGEZCEGD', N'SAMMIE', N'DICKENS', N'R');
@@ -4757,7 +4661,7 @@ INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'shiela@gmail.com', N'W0PS2yxJ', N'SHIELA', N'SARBACHER', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'shirley.bechtol@gmail.com', N'hCzcKrEA', N'SHIRLEY', N'BECHTOL', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'shoover35@gmail.com', N'ftOCZYXY', N'STEVE', N'HOOVER', N'R');
-GO
+--GO
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'shoover487@gmail.com', N'HP7lejfx', N'SANTIAGO', N'HOOVER', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'sibyl.mccormack@manda.com', N'i8JeFQZ@', N'SIBYL', N'MCCORMACK', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'siiri.leyva@gmail.com', N'@BrNtzZ4', N'SIIRI', N'LEYVA', N'R');
@@ -4858,7 +4762,7 @@ INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'sybil.crisp@hotmail.com', N'pCJffhQS', N'SYBIL', N'CRISP', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'sybil.payton@saucedout.com', N'8TPxZ0hr', N'SYBIL', N'PAYTON', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'sydney.mullen@gmail.com', N'2jKQ#4yl', N'SYDNEY', N'MULLEN', N'R');
-GO
+--GO
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'sydney.nunez@tyasa.com', N'Suv@qnf0', N'SYDNEY', N'NUNEZ', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'sydney.yaw@hr.gov', N'FOist4ML', N'SYDNEY', N'YAW', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'sylvester.albares@hotmail.com', N'KvdGPq4!', N'SYLVESTER', N'ALBARES', N'R');
@@ -4959,7 +4863,7 @@ INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'taylor@hotmail.com', N'lmuI39WT', N'TAYLOR', N'HIGGINBOTHAM', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'tbagley161@sizzling.com', N'9yQ5L0yJ', N'TAYLOR', N'BAGLEY', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'tbraxton457@hotmail.com', N'jS8NtAte', N'TIFFANY', N'BRAXTON', N'R');
-GO
+--GO
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'tcastros401@gmail.com', N'lEyO$01x', N'TONI', N'CASTROS', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'tchampion405@gmail.com', N'1qx2DMSX', N'TAMMY', N'CHAMPION', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'tcork434@gmail.com', N'ohqukVoG', N'TINA', N'CORK', N'R');
@@ -5060,7 +4964,7 @@ INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'treva@manda.com', N'57V1Vm15', N'TREVA', N'PACHECO', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'tricia@outlook.com', N'E61ZmPo9', N'TRICIA', N'STANFORD', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'trish.mcdowell@ew.net', N'G7NIvNdZ', N'TRISH', N'MCDOWELL', N'R');
-GO
+--GO
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'trista@outlook.com', N'8f7eSEMs', N'TRISTA', N'LACEY', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'troy@gmail.com', N't$5HexXG', N'TROY', N'CARROLL', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'trudy@yahoo.com', N'bGrHxJAg', N'TRUDY', N'LEVY', N'R');
@@ -5161,7 +5065,7 @@ INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'vera.cooke@hotmail.com', N'k9fe9gai', N'VERA', N'COOKE', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'verla.craven@nster.gov', N'v!yNyhLe', N'VERLA', N'CRAVEN', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'vern.paulson@gmail.com', N'UO6LykRX', N'VERN', N'PAULSON', N'R');
-GO
+--GO
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'verna.steele@gmail.com', N'knvhotap', N'VERNA', N'STEELE', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'vernice.blanco@ew.net', N'50WF!QfG', N'VERNICE', N'BLANCO', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'vernon.ankeny@nster.gov', N'yEbx9H2r', N'VERNON', N'ANKENY', N'C');
@@ -5262,7 +5166,7 @@ INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'whusser267@gmail.com', N'mwqdw3lM', N'WILLARD', N'HUSSER', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'wilber@hotmail.com', N'o@Zmdd7$', N'WILBER', N'HESS', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'wilbert.dube@gmail.com', N'$ZSOCxr7', N'WILBERT', N'DUBE', N'R');
-GO
+--GO
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'wilbert.hahn@ew.net', N'Au6qYnbc', N'WILBERT', N'HAHN', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'wilbert.nicka@hotmail.com', N'1uHgW2@O', N'WILBERT', N'NICKA', N'R');
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'wilbert.paul@sizzling.com', N'F!WAEjAV', N'WILBERT', N'PAUL', N'R');
@@ -5357,13 +5261,20 @@ INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'zulma.laurie@saucedout.com', N'E6V7enaE', N'ZULMA', N'LAURIE', N'R');
 GO
 
+SELECT * FROM [User]
+GO
 -- ¿ƒÃ»Õ»—“–¿“Œ–
 INSERT [User] ([Email], [Password], [FirstName], [LastName], [RoleId]) VALUES (N'admin.@mail.ru', N'YJ4E70D9', N'MYRTLE', N'HARTMAN', N'A');
+GO
 
 SELECT * FROM [User]
+GO
 
 SELECT * FROM [Runner]
+GO
 
 SELECT * FROM [Offers]
+GO
 
--- —Œ«ƒ¿≈Ã “¿¡À»÷” œ–≈ƒÀŒ∆≈Õ»…
+SELECT [User].[FirstName], [User].[LastName], Country.[CountryName], Runner.[Gender], Runner.[DateOfBirth], Runner.[NamePic], Runner.[Picture] FROM [User], Country, Runner WHERE [User].Email = Runner.Email AND Runner.[CountryCode] = Country.[CountryCode] AND [User].Email = 'admin.@mail.ru'
+GO

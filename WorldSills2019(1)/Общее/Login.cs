@@ -160,11 +160,11 @@ namespace WorldSills2019_1_.Общее
                             while (reader.Read())
                             {
                                 email = reader["Email"].ToString();
-                                if(reader["RoleId"].ToString() == "R")
+                                if (reader["RoleId"].ToString() == "R")
                                 {
                                     ActiveForm.Hide();
-                                    Edit_Profile_Runner runner = new Edit_Profile_Runner();
-                                    runner.ShowDialog();
+                                    Runner_Menu menu = new Runner_Menu();
+                                    menu.ShowDialog();
                                     Close();
                                 }
                                 if(reader["RoleId"].ToString() == "A")

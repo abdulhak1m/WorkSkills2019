@@ -39,8 +39,11 @@
             this.txt_name = new System.Windows.Forms.TextBox();
             this.txt_surname = new System.Windows.Forms.TextBox();
             this.cmb_gender = new System.Windows.Forms.ComboBox();
+            this.genderBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.my_maraphoneDataSet = new WorldSills2019_1_.my_maraphoneDataSet();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.cmb_Country = new System.Windows.Forms.ComboBox();
+            this.countryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btn_cshow = new System.Windows.Forms.Button();
             this.btn_show = new System.Windows.Forms.Button();
             this.btn_back = new System.Windows.Forms.Button();
@@ -58,7 +61,12 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.txt_username = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.genderTableAdapter = new WorldSills2019_1_.my_maraphoneDataSetTableAdapters.GenderTableAdapter();
+            this.countryTableAdapter = new WorldSills2019_1_.my_maraphoneDataSetTableAdapters.CountryTableAdapter();
             this.topPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.genderBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.my_maraphoneDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.countryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pc_image)).BeginInit();
             this.SuspendLayout();
             // 
@@ -152,6 +160,7 @@
             // 
             // cmb_gender
             // 
+            this.cmb_gender.DataSource = this.genderBindingSource;
             this.cmb_gender.DisplayMember = "Gender";
             this.cmb_gender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_gender.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -163,16 +172,28 @@
             this.cmb_gender.TabIndex = 34;
             this.cmb_gender.ValueMember = "Gender";
             // 
+            // genderBindingSource
+            // 
+            this.genderBindingSource.DataMember = "Gender";
+            this.genderBindingSource.DataSource = this.my_maraphoneDataSet;
+            // 
+            // my_maraphoneDataSet
+            // 
+            this.my_maraphoneDataSet.DataSetName = "my_maraphoneDataSet";
+            this.my_maraphoneDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.Location = new System.Drawing.Point(62, 248);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(293, 23);
+            this.dateTimePicker1.Size = new System.Drawing.Size(122, 23);
             this.dateTimePicker1.TabIndex = 39;
             this.dateTimePicker1.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             // 
             // cmb_Country
             // 
+            this.cmb_Country.DataSource = this.countryBindingSource;
             this.cmb_Country.DisplayMember = "CountryName";
             this.cmb_Country.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_Country.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -183,6 +204,11 @@
             this.cmb_Country.Size = new System.Drawing.Size(293, 25);
             this.cmb_Country.TabIndex = 33;
             this.cmb_Country.ValueMember = "CountryCode";
+            // 
+            // countryBindingSource
+            // 
+            this.countryBindingSource.DataMember = "Country";
+            this.countryBindingSource.DataSource = this.my_maraphoneDataSet;
             // 
             // btn_cshow
             // 
@@ -359,6 +385,14 @@
             this.label1.TabIndex = 40;
             this.label1.Text = "При желании, вы можете не менять пароль!\r\nИ оставить эти поля пустыми.";
             // 
+            // genderTableAdapter
+            // 
+            this.genderTableAdapter.ClearBeforeFill = true;
+            // 
+            // countryTableAdapter
+            // 
+            this.countryTableAdapter.ClearBeforeFill = true;
+            // 
             // Edit_Profile_Runner
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -396,6 +430,9 @@
             this.Text = "Edit_Profile_Runner";
             this.Load += new System.EventHandler(this.Edit_Profile_Runner_Load);
             this.topPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.genderBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.my_maraphoneDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.countryBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pc_image)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -433,5 +470,10 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label txt_username;
         private System.Windows.Forms.Label label1;
+        private my_maraphoneDataSet my_maraphoneDataSet;
+        private System.Windows.Forms.BindingSource genderBindingSource;
+        private my_maraphoneDataSetTableAdapters.GenderTableAdapter genderTableAdapter;
+        private System.Windows.Forms.BindingSource countryBindingSource;
+        private my_maraphoneDataSetTableAdapters.CountryTableAdapter countryTableAdapter;
     }
 }

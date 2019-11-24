@@ -50,5 +50,26 @@ namespace WorldSills2019_1_.Бегун
             registration.ShowDialog();
             Close();
         }
+        // переходим в окно редактирования профиля Клоуна
+        private void btn_edit_profile_Click(object sender, EventArgs e)
+        {
+            ActiveForm.Hide();
+            Edit_Profile_Runner profile_Runner = new Edit_Profile_Runner();
+            profile_Runner.ShowDialog();
+            Close();
+        }
+
+        private void btn_Eixt_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Вы уверены, что хотите покинуть профиль Бегуна?", "Подтвердите",
+                MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (result == DialogResult.OK)
+            {
+                ActiveForm.Hide();
+                Home home = new Home();
+                home.ShowDialog();
+                Close();
+            }
+        }
     }
 }

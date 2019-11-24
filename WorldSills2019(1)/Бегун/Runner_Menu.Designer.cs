@@ -30,14 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             this.topPanel = new System.Windows.Forms.Panel();
-            this.btn_minimized = new System.Windows.Forms.Button();
-            this.btn_Close = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lbl_timer = new System.Windows.Forms.Label();
             this.btn_edit_profile = new System.Windows.Forms.Button();
             this.btn_registration_runner = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_Contact = new System.Windows.Forms.Button();
+            this.btn_minimized = new System.Windows.Forms.Button();
+            this.btn_Close = new System.Windows.Forms.Button();
+            this.btn_Eixt = new System.Windows.Forms.Button();
             this.topPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,34 +53,6 @@
             this.topPanel.Name = "topPanel";
             this.topPanel.Size = new System.Drawing.Size(559, 25);
             this.topPanel.TabIndex = 7;
-            // 
-            // btn_minimized
-            // 
-            this.btn_minimized.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_minimized.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btn_minimized.FlatAppearance.BorderSize = 0;
-            this.btn_minimized.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_minimized.ForeColor = System.Drawing.Color.White;
-            this.btn_minimized.Image = global::WorldSills2019_1_.Properties.Resources.icons8_m5acos_minimize_16;
-            this.btn_minimized.Location = new System.Drawing.Point(509, 0);
-            this.btn_minimized.Name = "btn_minimized";
-            this.btn_minimized.Size = new System.Drawing.Size(25, 25);
-            this.btn_minimized.TabIndex = 2;
-            this.btn_minimized.UseVisualStyleBackColor = false;
-            // 
-            // btn_Close
-            // 
-            this.btn_Close.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Close.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btn_Close.FlatAppearance.BorderSize = 0;
-            this.btn_Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Close.ForeColor = System.Drawing.Color.White;
-            this.btn_Close.Image = global::WorldSills2019_1_.Properties.Resources.icons8_shutdown_16;
-            this.btn_Close.Location = new System.Drawing.Point(534, 0);
-            this.btn_Close.Name = "btn_Close";
-            this.btn_Close.Size = new System.Drawing.Size(25, 25);
-            this.btn_Close.TabIndex = 1;
-            this.btn_Close.UseVisualStyleBackColor = false;
             // 
             // timer1
             // 
@@ -110,6 +83,7 @@
             this.btn_edit_profile.TabIndex = 10;
             this.btn_edit_profile.Text = "Редактировать профиль";
             this.btn_edit_profile.UseVisualStyleBackColor = false;
+            this.btn_edit_profile.Click += new System.EventHandler(this.btn_edit_profile_Click);
             // 
             // btn_registration_runner
             // 
@@ -151,6 +125,49 @@
             this.btn_Contact.Text = "Контакты";
             this.btn_Contact.UseVisualStyleBackColor = false;
             // 
+            // btn_minimized
+            // 
+            this.btn_minimized.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_minimized.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btn_minimized.FlatAppearance.BorderSize = 0;
+            this.btn_minimized.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_minimized.ForeColor = System.Drawing.Color.White;
+            this.btn_minimized.Image = global::WorldSills2019_1_.Properties.Resources.icons8_m5acos_minimize_16;
+            this.btn_minimized.Location = new System.Drawing.Point(509, 0);
+            this.btn_minimized.Name = "btn_minimized";
+            this.btn_minimized.Size = new System.Drawing.Size(25, 25);
+            this.btn_minimized.TabIndex = 2;
+            this.btn_minimized.UseVisualStyleBackColor = false;
+            // 
+            // btn_Close
+            // 
+            this.btn_Close.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Close.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btn_Close.FlatAppearance.BorderSize = 0;
+            this.btn_Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Close.ForeColor = System.Drawing.Color.White;
+            this.btn_Close.Image = global::WorldSills2019_1_.Properties.Resources.icons8_shutdown_16;
+            this.btn_Close.Location = new System.Drawing.Point(534, 0);
+            this.btn_Close.Name = "btn_Close";
+            this.btn_Close.Size = new System.Drawing.Size(25, 25);
+            this.btn_Close.TabIndex = 1;
+            this.btn_Close.UseVisualStyleBackColor = false;
+            // 
+            // btn_Eixt
+            // 
+            this.btn_Eixt.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btn_Eixt.FlatAppearance.BorderSize = 0;
+            this.btn_Eixt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Eixt.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn_Eixt.ForeColor = System.Drawing.Color.White;
+            this.btn_Eixt.Location = new System.Drawing.Point(4, 31);
+            this.btn_Eixt.Name = "btn_Eixt";
+            this.btn_Eixt.Size = new System.Drawing.Size(75, 31);
+            this.btn_Eixt.TabIndex = 11;
+            this.btn_Eixt.Text = "Выйти";
+            this.btn_Eixt.UseVisualStyleBackColor = false;
+            this.btn_Eixt.Click += new System.EventHandler(this.btn_Eixt_Click);
+            // 
             // Runner_Menu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -159,6 +176,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_Contact);
             this.Controls.Add(this.btn_edit_profile);
+            this.Controls.Add(this.btn_Eixt);
             this.Controls.Add(this.btn_registration_runner);
             this.Controls.Add(this.lbl_timer);
             this.Controls.Add(this.topPanel);
@@ -185,5 +203,6 @@
         private System.Windows.Forms.Button btn_registration_runner;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_Contact;
+        private System.Windows.Forms.Button btn_Eixt;
     }
 }

@@ -10,7 +10,7 @@ namespace WorldSills2019_1_.Общее.ConnectionStrings
     {
         public static string GetString()
         {
-            return @"Data Source=DESKTOP-C1DHPVQ;Initial Catalog=my_maraphone;Integrated Security=True";
+            return @"Data Source=DESKTOP-57F7258;Initial Catalog=my_maraphone;Integrated Security=True";
         } 
     }
 }

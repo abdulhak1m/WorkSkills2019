@@ -43,16 +43,24 @@ namespace WorldSills2019_1_.Администрация
             timer1.Start();
         }
 
-        private void btn_back_Click(object sender, EventArgs e)
+        private void btn_Eixt_Click(object sender, EventArgs e)
         {
             DialogResult dialog = MessageBox.Show("Вы действительно хотите покинуть профиль Администратора системы?!", "Подтвердите", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk);
-            if(dialog == DialogResult.OK)
+            if (dialog == DialogResult.OK)
             {
                 ActiveForm.Hide();
                 Home home = new Home();
                 home.ShowDialog();
                 Close();
             }
+        }
+        // грузим шестёрок для Марафона
+        private void btn_OK_Click(object sender, EventArgs e)
+        {
+            ActiveForm.Hide();
+            Volunteer volunteer = new Volunteer();
+            volunteer.ShowDialog();
+            Close();
         }
     }
 }
